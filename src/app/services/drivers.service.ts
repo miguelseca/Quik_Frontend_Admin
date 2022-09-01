@@ -1,61 +1,70 @@
-// import { Injectable } from '@angular/core';
-// import { catchError, Observable, of, tap } from 'rxjs';
-// import { CONFIG } from 'src/assets/config';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import Carga from '../models/Carga';
+import { Injectable } from '@angular/core';
+import { catchError, Observable, of, tap } from 'rxjs';
+import { CONFIG } from 'src/assets/config';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Driver from '../models/Driver';
 
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class CargasService {
-//   private cargasURL = CONFIG.cargasURL;
+@Injectable({
+  providedIn: 'root',
+})
+export class DriversService {
+  private DRIVERS_URL = CONFIG.DRIVERS_URL;
 
-//   private token: string = localStorage.getItem("token")!.slice(1,-1);
+  private token: string = localStorage.getItem('token')!.slice(1, -1);
 
-//   httpOptions = {
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${this.token}`,
-//     }),
-//   };
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}`,
+    }),
+  };
 
-//   constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-//   getCargas(): Observable<Carga[]> {
-//     return this.http.get<Carga[]>(this.cargasURL, this.httpOptions).pipe(
-//       tap((_) => this.log('get cargas successfull!')),
-//       catchError(this.handleError<Carga[]>('getCargas', []))
-//       );
-//     }
+  getDrivers(): Observable<Driver[]> {
+    return this.http.get<Driver[]>(this.DRIVERS_URL, this.httpOptions).pipe(
+      tap((_) => this.log('get drivers successfull!')),
+      catchError(this.handleError<Driver[]>('getDrivers', []))
+    );
+  }
 
-//     updateCarga(carga: Carga): Observable<any> {
-//       return this.http.put(this.cargasURL, carga, this.httpOptions).pipe(
-//         tap((_) => this.log(`updated carga AWB=${carga.AWB}`)),
-//       catchError(this.handleError<any>('updateCarga'))
-//     );
-//   }
+  updateDriver(driver: Driver): Observable<any> {
+    return this.http.put(this.DRIVERS_URL, driver, this.httpOptions).pipe(
+      tap((_) => this.log(`updated drivers}`)),
+      catchError(this.handleError<any>('updateDriver'))
+    );
+  }
 
-//   addCarga(carga: Carga): Observable<any> {
-//     return this.http.post<Carga>(this.cargasURL, carga, this.httpOptions).pipe(
-//       tap(() => this.log(`new carga added AWB=${carga.AWB}`)),
-//       catchError(this.handleError<any>('addCarga'))
-//     );
-//   }
+  createDriver(driver: Driver): Observable<any> {
+    return this.http
+      .post<Driver>(this.DRIVERS_URL, driver, this.httpOptions)
+      .pipe(
+        tap(() => this.log(`new driver added`)),
+        catchError(this.handleError<any>('createDriver'))
+      );
+  }
 
-//   private handleError<T>(operation = 'operation', result?: T) {
-//     return (error: any): Observable<T> => {
-//       // TODO: send the error to remote logging infrastructure
-//       console.error(error); // log to console instead
+  deleteDriver(driver: Driver): Observable<any> {
+    return this.http
+      .delete<Driver>(this.DRIVERS_URL + driver.nif, this.httpOptions)
+      .pipe(
+        tap(() => this.log(`driver deleted`)),
+        catchError(this.handleError<any>('deletDriver'))
+      );
+  }
 
-//       // TODO: better job of transforming error for user consumption
-//       this.log(`${operation} failed: ${error.message}`);
 
-//       // Let the app keep running by returning an empty result.
-//       return of(result as T);
-//     };
-//   }
 
-//   private log(message: string) {
-//     console.log(`Cargas Service: ${message}`);
-//   }
-// }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log(`Driver Service: ${message}`);
+  }
+}
