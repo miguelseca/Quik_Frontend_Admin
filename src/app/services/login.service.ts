@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, share, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { CONFIG } from 'src/assets/config';
 import User from '../models/user';
 
@@ -9,18 +9,17 @@ import User from '../models/user';
   providedIn: 'root',
 })
 export class LoginService {
-  loginURL: string = CONFIG.loginURL;
+  private LOGIN_URL: string = CONFIG.LOGIN_URL;
 
   constructor(private http: HttpClient) {}
 
   login(user: User): Observable<any> {
     console.log(user);
 
-    return this.http.post<any>(this.loginURL, user).pipe(
+    return this.http.post<any>(this.LOGIN_URL, user).pipe(
       tap(() => {
         this.log(`user ${user.username} authenticated!`);
       }),
-
       catchError(this.handleError<any>('loginUser'))
     );
 
