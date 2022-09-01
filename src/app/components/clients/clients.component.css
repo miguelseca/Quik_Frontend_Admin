@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+  background-color: lightgrey;
+
+}
+
+.book-container {
+  background-color: lightsteelblue;
+  padding: 20px;
+}
+
+.operations-button {
+
+  background-color: lightgrey;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: rgb(206, 18, 18);
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  margin-top: 0.4rem;
+}
+.operations-button:hover {
+  background-color: black;
+  color: white;
+}
+

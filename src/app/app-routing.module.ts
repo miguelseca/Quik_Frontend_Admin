@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientsComponent } from './components/clients/clients.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DriversComponent } from './components/drivers/drivers.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const routes: Routes = [
@@ -21,9 +23,9 @@ const routes: Routes = [
   },{
     path: 'issues',component: LoginPageComponent,
   },{
-    path: 'clients',component: LoginPageComponent,
+    path: 'clients',component: ClientsComponent,
   },{
-    path: 'drivers',component: LoginPageComponent,
+    path: 'drivers',component: DriversComponent,
   },{
     path: 'profile',component: LoginPageComponent,
   },
