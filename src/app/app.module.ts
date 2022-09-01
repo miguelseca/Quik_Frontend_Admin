@@ -10,12 +10,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { DriversComponent } from './components/drivers/drivers.component';
+import { IssuesComponent } from './components/issues/issues.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     DashboardComponent,
+    DriversComponent,
+    IssuesComponent,
+    ClientsComponent,
    
   ],
   imports: [
