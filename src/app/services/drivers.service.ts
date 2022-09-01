@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { CONFIG } from 'src/assets/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import Driver from '../models/Driver';
+import Driver from '../models/driver';
 
 @Injectable({
   providedIn: 'root',
