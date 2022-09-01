@@ -1,61 +1,49 @@
-// import { Injectable } from '@angular/core';
-// import { catchError, Observable, of, tap } from 'rxjs';
-// import { CONFIG } from 'src/assets/config';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import Carga from '../models/Carga';
+import { Injectable } from '@angular/core';
+import { catchError, Observable, of, tap } from 'rxjs';
+import { CONFIG } from 'src/assets/config';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Issue from '../models/issue';
 
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class CargasService {
-//   private cargasURL = CONFIG.cargasURL;
+@Injectable({
+  providedIn: 'root',
+})
+export class CargasService {
+  private ISSUES_URL = CONFIG.ISSUES_URL;
 
-//   private token: string = localStorage.getItem("token")!.slice(1,-1);
+  private token: string = localStorage.getItem('token')!.slice(1, -1);
 
-//   httpOptions = {
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${this.token}`,
-//     }),
-//   };
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.token}`,
+    }),
+  };
 
-//   constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-//   getCargas(): Observable<Carga[]> {
-//     return this.http.get<Carga[]>(this.cargasURL, this.httpOptions).pipe(
-//       tap((_) => this.log('get cargas successfull!')),
-//       catchError(this.handleError<Carga[]>('getCargas', []))
-//       );
-//     }
+  getAllIssues(): Observable<Issue[]> {
+    return this.http.get<Issue[]>(this.ISSUES_URL, this.httpOptions).pipe(
+      tap((_) => this.log('get isssues successfull!')),
+      catchError(this.handleError<Issue[]>('getAllIssues', []))
+    );
+  }
 
-//     updateCarga(carga: Carga): Observable<any> {
-//       return this.http.put(this.cargasURL, carga, this.httpOptions).pipe(
-//         tap((_) => this.log(`updated carga AWB=${carga.AWB}`)),
-//       catchError(this.handleError<any>('updateCarga'))
-//     );
-//   }
+  updateIssue(issue: Issue): Observable<any> {
+    return this.http.put(this.ISSUES_URL, issue, this.httpOptions).pipe(
+      tap((_) => this.log(`updated issue`)),
+      catchError(this.handleError<any>('updateIssue'))
+    );
+  }
 
-//   addCarga(carga: Carga): Observable<any> {
-//     return this.http.post<Carga>(this.cargasURL, carga, this.httpOptions).pipe(
-//       tap(() => this.log(`new carga added AWB=${carga.AWB}`)),
-//       catchError(this.handleError<any>('addCarga'))
-//     );
-//   }
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
+  }
 
-//   private handleError<T>(operation = 'operation', result?: T) {
-//     return (error: any): Observable<T> => {
-//       // TODO: send the error to remote logging infrastructure
-//       console.error(error); // log to console instead
-
-//       // TODO: better job of transforming error for user consumption
-//       this.log(`${operation} failed: ${error.message}`);
-
-//       // Let the app keep running by returning an empty result.
-//       return of(result as T);
-//     };
-//   }
-
-//   private log(message: string) {
-//     console.log(`Cargas Service: ${message}`);
-//   }
-// }
+  private log(message: string) {
+    console.log(`Cargas Service: ${message}`);
+  }
+}
