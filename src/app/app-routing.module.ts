@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientsComponent } from './components/clients/clients.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DriversComponent } from './components/drivers/drivers.component';
+import { IssuesComponent } from './components/issues/issues.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   },{
     path: 'chart-Drivers',component: LoginPageComponent,
   },{
-    path: 'issues',component: LoginPageComponent,
+    path: 'issues',component: IssuesComponent,
   },{
     path: 'clients',component: ClientsComponent,
   },{
