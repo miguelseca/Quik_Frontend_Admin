@@ -13,12 +13,8 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   logOut(): void {
-    const token = localStorage.getItem('token');
-    console.log(token);
-    if (!!token) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      this.router.navigateByUrl('/login');
-    }
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/login');
   }
 }
