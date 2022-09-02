@@ -52,6 +52,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DialogModule } from '@angular/cdk/dialog';
 
+
+
 //*================= COMPONENTS ==================================================
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -60,6 +62,7 @@ import { DriversComponent } from './components/drivers/drivers.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 //import { Interceptor } from './interceptors/interceptor';
 //*===============================================================================
 
@@ -139,6 +142,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DialogModule,
     MatButtonModule,
     MatInputModule,
+    NgxChartsModule,
+  
 
 
 
