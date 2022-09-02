@@ -38,6 +38,6 @@ export class TripsService {
   }
 
   private log(message: string) {
-    console.log(`Cargas Service: ${message}`);
+    console.log(`Trip Service: ${message}`);
   }
 }

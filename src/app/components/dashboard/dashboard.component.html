@@ -29,22 +29,23 @@
 
     </div> -->
 
-
-
     <div class="grid-container">
         <div class="grid-item item1">Trips today</div>
-        <div class="grid-item item2">
-            <mat-card class="demo-inline-calendar-card">
-                <mat-calendar [(selected)]="selected"></mat-calendar>
-            </mat-card>
-        </div>
+        <div class="grid-item item2"><mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+          </mat-card></div>
         <div class="grid-item item3">Total Trips</div>
         <div class="grid-item item4">Total Profit</div>
         <div class="grid-item item5">Tasks</div>
         <div class="grid-item item6">
-
-            <ngx-charts-advanced-pie-chart class="ChartPie" [view]="view" scheme="vivid" [results]="single"
-                [gradient]="gradient" (select)="onSelect($event)" (activate)="onActivate($event)"
+            
+            <ngx-charts-advanced-pie-chart class="ChartPie"
+                [view]="view"
+                scheme="vivid"
+                [results]="single"
+                [gradient]="gradient"
+                (select)="onSelect($event)"
+                (activate)="onActivate($event)"
                 (deactivate)="onDeactivate($event)">
             </ngx-charts-advanced-pie-chart>
         </div>

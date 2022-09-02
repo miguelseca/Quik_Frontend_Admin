@@ -4,71 +4,55 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import User from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
-import { CONFIG } from 'src/assets/config';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  styleUrls: ['./login-page.component.css'],
 })
-
-
 export class LoginPageComponent implements OnInit {
-
-
   constructor(
     private loginService: LoginService,
     private router: Router,
     private snackBar: MatSnackBar
-    ) {}
+  ) {}
 
+  loginForm: any;
 
-    loginForm: any;
-
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      password: new FormControl('',[Validators.required, Validators.minLength(4)])
+      username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
     });
   }
 
-    onLogOnClick() {
-      const theUser: User = {
-        username: this.loginForm.value.username,
-        password: this.loginForm.value.password,
+  onLogOnClick() {
+    const theUser: User = {
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password,
+    };
 
-      };
-
-
-
-
-      this.loginService.login(theUser).subscribe((data) => {
-        console.log("data received" + data.role);
-
+    this.loginService.login(theUser).subscribe((data) => {
+      console.log('role received ' + data.role);
+      console.log('token provided: ' + data.token);
+      if (data.role == 'admin') {
+        this.router.navigateByUrl('/dashboard');
         localStorage.setItem('token', JSON.stringify(data));
-        console.log('token provided: ' + data.token);
-        if (!!data)
-          this.router.navigateByUrl('/dashboard');
-        if (!data) this.logSnacks("Autenticação falhou.", 2000);
-      });
-    }
+        localStorage.setItem('user', JSON.stringify(this.loginForm.value.username));
 
+      } else {
+        this.logSnacks('Autenticação falhou.', 2000);
+      }
+    });
+  }
 
-    // get username() {
-    //   return this.loginForm.get('username');
-    // }
-
-
-    logSnacks(message: string, time: number): void {
-      this.snackBar.open(message, '', { panelClass: 'snacks', duration: time });
-    }
-
+  logSnacks(message: string, time: number): void {
+    this.snackBar.open(message, '', { panelClass: 'snacks', duration: time });
+  }
 }
-
-
-
-
-
-
-
-

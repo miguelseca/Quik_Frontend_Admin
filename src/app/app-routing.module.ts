@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -14,21 +15,21 @@ const routes: Routes = [
   {
     path: 'login',component: LoginPageComponent,
   },{
-    path: 'dashboard',component: DashboardComponent,
+    path: 'dashboard',component: DashboardComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Users',component: LoginPageComponent,
+    path: 'chart-Users',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Revenue',component: LoginPageComponent,
+    path: 'chart-Revenue',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Drivers',component: LoginPageComponent,
+    path: 'chart-Drivers',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'issues',component: IssuesComponent,
+    path: 'issues',component: IssuesComponent,canActivate:[AuthGuardService]
   },{
-    path: 'clients',component: ClientsComponent,
+    path: 'clients',component: ClientsComponent,canActivate:[AuthGuardService]
   },{
-    path: 'drivers',component: DriversComponent,
+    path: 'drivers',component: DriversComponent,canActivate:[AuthGuardService]
   },{
-    path: 'profile',component: LoginPageComponent,
+    path: 'profile',component: LoginPageComponent,canActivate:[AuthGuardService]
   },
 ];
 
