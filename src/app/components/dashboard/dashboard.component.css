@@ -14,7 +14,7 @@
   padding: 0 30px;
 }
 .dashboard{
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   background-color: grey;
   align-items: center;
@@ -69,6 +69,7 @@
   text-align: center;
   padding: 91px;
   font-size: 30px;
+  
 }
 
 .item1{
@@ -88,8 +89,14 @@
   border: 2px solid red;
   
 }
+.item2{
+  border: 2px solid red;
+  
+}
+
 .demo-inline-calendar-card {
-  width: 300px;
+  width: fit-content; 
+  border: 2px solid red;
   
 }
 
