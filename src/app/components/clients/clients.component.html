@@ -4,82 +4,69 @@
 
   <mat-menu #menu="matMenu" [formGroup]="toppings">
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="AWB">AWB</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="email">email</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="origin">Origem</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="phone">phone</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="destination">Destino</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="firstName">firstName</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="pieces">Peças</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="lastName">lastName</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="weight">Peso</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="paymentMethod">paymentMethod</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="volume">Volume</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="emailVerified">emailVerified</mat-checkbox>
     </p>
     <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="description">Descrição</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="flight">Voo</mat-checkbox>
+      <mat-checkbox (change)="onChange($event)" formControlName="isBanned">isBanned</mat-checkbox>
     </p>
 
   </mat-menu>
 
   <table mat-table [dataSource]="clients" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="AWB">
-      <th mat-header-cell *matHeaderCellDef>AWB</th>
-      <td mat-cell *matCellDef="let element"> {{element.AWB}} </td>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>email</th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="origin">
-      <th mat-header-cell *matHeaderCellDef>Origem</th>
-      <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>phone</th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="destination">
-      <th mat-header-cell *matHeaderCellDef>Destino</th>
-      <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>firstName</th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="pieces">
-      <th mat-header-cell *matHeaderCellDef>Peças</th>
-      <td mat-cell *matCellDef="let element"> {{element.pieces}} </td>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>lastName</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef>Peso(Kg)</th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="paymentMethod">
+      <th mat-header-cell *matHeaderCellDef>paymentMethod</th>
+      <td mat-cell *matCellDef="let element"> {{element.paymentMethod}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="volume">
-      <th mat-header-cell *matHeaderCellDef>Volume(m3)</th>
-      <td mat-cell *matCellDef="let element"> {{element.volume}} </td>
+    <ng-container matColumnDef="emailVerified">
+      <th mat-header-cell *matHeaderCellDef>emailVerified</th>
+      <td mat-cell *matCellDef="let element"> {{element.status.emailVerified}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Descrição</th>
-      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    <ng-container matColumnDef="isBanned">
+      <th mat-header-cell *matHeaderCellDef>isBanned</th>
+      <td mat-cell *matCellDef="let element"> {{element.status.isBanned}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="flight">
-      <th mat-header-cell *matHeaderCellDef>Voo</th>
-      <td mat-cell *matCellDef="let element"> {{element.flight}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="edit">
+   <ng-container matColumnDef="ban">
       <th mat-header-cell *matHeaderCellDef> </th>
-      <td mat-cell *matCellDef="let element"><button mat-button (click)="onEditClick(element)" class="operations-button"><mat-icon>edit</mat-icon></button></td>
-    </ng-container>
-
-    <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef> </th>
-      <td mat-cell *matCellDef="let element"><button mat-button (click)="onDeleteClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></td>
+      <td mat-cell *matCellDef="let element"><button mat-button (click)="onBanClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

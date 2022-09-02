@@ -52,8 +52,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DialogModule } from '@angular/cdk/dialog';
 
-
-
 //*================= COMPONENTS ==================================================
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -63,7 +61,9 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-//import { Interceptor } from './interceptors/interceptor';
+import { Interceptor } from './interceptors/interceptor';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+
 //*===============================================================================
 
 @NgModule({
@@ -74,6 +74,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     DriversComponent,
     IssuesComponent,
     ClientsComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -143,14 +144,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatButtonModule,
     MatInputModule,
     NgxChartsModule,
-  
-
-
-
   ],
   bootstrap: [AppComponent],
   providers: [
-   // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
-  ]
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+  ],
 })
 export class AppModule {}
