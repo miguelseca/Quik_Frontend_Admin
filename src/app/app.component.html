@@ -5,14 +5,14 @@
 
             <span><strong>{{title}}</strong></span>
             <input type="text" placeholder="Search">
-            <mat-icon>search</mat-icon>
+            <mat-icon> search</mat-icon>
 
             <span class="example-spacer"></span>
 
-            <h3>Admin@gmail.com</h3>
+            <h3> {{user_name}} </h3>
 
             <button>
-                <mat-icon>settings</mat-icon>
+                <mat-icon (click)="logOut()" >exit_to_app</mat-icon>
             </button>
 
 
