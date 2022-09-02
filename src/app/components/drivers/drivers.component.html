@@ -1,1 +1,111 @@
-<p>drivers works!</p>
+<div class="book-container">
+
+  <button mat-button [matMenuTriggerFor]="menu">Options</button>
+
+  <mat-menu #menu="matMenu" [formGroup]="toppings">
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="nif">nif</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="firstName">firstName</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="lastName">lastName</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="phone">phone</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="email">email</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="code">code</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="carBrand">carBrand</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="carModel">carModel</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="licensePlate">licensePlate</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="shift">shift</mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox (change)="onChange($event)" formControlName="lastTrip">lastTrip</mat-checkbox>
+    </p>
+
+  </mat-menu>
+
+  <table mat-table [dataSource]="drivers" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nif">
+      <th mat-header-cell *matHeaderCellDef>nif</th>
+      <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>firstName</th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>lastName</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>phone</th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>email</th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef>code</th>
+      <td mat-cell *matCellDef="let element"> {{element.service.code}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="carBrand">
+      <th mat-header-cell *matHeaderCellDef>carBrand</th>
+      <td mat-cell *matCellDef="let element"> {{element.service.carBrand}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="carModel">
+      <th mat-header-cell *matHeaderCellDef>carModel</th>
+      <td mat-cell *matCellDef="let element"> {{element.service.carModel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="licensePlate">
+      <th mat-header-cell *matHeaderCellDef>licensePlate</th>
+      <td mat-cell *matCellDef="let element"> {{element.service.licensePlate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="shift">
+      <th mat-header-cell *matHeaderCellDef>shift</th>
+      <td mat-cell *matCellDef="let element"> {{element.shift}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastTrip">
+      <th mat-header-cell *matHeaderCellDef>lastTrip</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastTrip}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"><button mat-button (click)="onEditClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+       <th mat-header-cell *matHeaderCellDef> </th>
+       <td mat-cell *matCellDef="let element"><button mat-button (click)="onDeleteClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></td>
+     </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
