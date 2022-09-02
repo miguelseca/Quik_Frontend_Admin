@@ -60,7 +60,8 @@ import { DriversComponent } from './components/drivers/drivers.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-//import { Interceptor } from './interceptors/interceptor';
+import { Interceptor } from './interceptors/interceptor';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 //*===============================================================================
 
 @NgModule({
@@ -71,6 +72,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     DriversComponent,
     IssuesComponent,
     ClientsComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -145,7 +147,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   ],
   bootstrap: [AppComponent],
   providers: [
-   // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
   ]
 })
 export class AppModule {}
