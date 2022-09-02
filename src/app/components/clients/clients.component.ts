@@ -6,149 +6,96 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import Client from 'src/app/models/client';
 import { ClientsService } from 'src/app/services/clients.service';
-//import { ConfirmComponent } from '../confirm/confirm.component';
+import { ConfirmComponent } from '../confirm/confirm.component';
 
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.css']
+  styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
-
   clients: Client[] = [];
   displayedColumns: string[] = [];
 
   toppings = this._formBuilder.group({
-    AWB: true,
-    origin: true,
-    destination: true,
-    pieces: true,
-    weight: true,
-    volume: true,
-    description: true,
-    flight: true,
+    email: true,
+    phone: true,
+    firstName: true,
+    lastName: true,
+    paymentMethod: true,
+    emailVerified: true,
+    isBanned: true,
   });
 
   constructor(
-    private clientservice: ClientsService,
+    private clientService: ClientsService,
     private _formBuilder: FormBuilder,
     private router: Router,
     private matDialog: MatDialog,
     public snackBar: MatSnackBar
   ) {}
 
-
   ngOnInit(): void {
     this.getClients();
 
     this.displayedColumns = [
-      'AWB',
-      'origin',
-      'destination',
-      'pieces',
-      'weight',
-      'volume',
-      'description',
-      'flight',
-      'edit',
-      'delete',
+      'email',
+      'phone',
+      'firstName',
+      'lastName',
+      'paymentMethod',
+      'emailVerified',
+      'isBanned',
+      'ban',
     ];
   }
 
-
-
-
-
-
-
-
-
   onChange(event: MatCheckboxChange): void {
     this.displayedColumns = [];
-    if (this.toppings.value.AWB) this.displayedColumns.push('AWB');
-    if (this.toppings.value.origin) this.displayedColumns.push('origin');
-    if (this.toppings.value.destination)
-      this.displayedColumns.push('destination');
-    if (this.toppings.value.pieces) this.displayedColumns.push('pieces');
-    if (this.toppings.value.weight) this.displayedColumns.push('weight');
-    if (this.toppings.value.volume) this.displayedColumns.push('volume');
-    if (this.toppings.value.description)
-      this.displayedColumns.push('description');
-    if (this.toppings.value.flight) this.displayedColumns.push('flight');
-    if (!this.displayedColumns.includes('edit'))
-      this.displayedColumns.push('edit');
-    if (!this.displayedColumns.includes('delete'))
-      this.displayedColumns.push('delete');
+    if (this.toppings.value.email) this.displayedColumns.push('email');
+    if (this.toppings.value.phone) this.displayedColumns.push('phone');
+    if (this.toppings.value.firstName) this.displayedColumns.push('firstName');
+    if (this.toppings.value.lastName) this.displayedColumns.push('lastName');
+    if (this.toppings.value.paymentMethod)
+      this.displayedColumns.push('paymentMethod');
+    if (this.toppings.value.emailVerified)
+      this.displayedColumns.push('emailVerified');
+    if (this.toppings.value.isBanned) this.displayedColumns.push('isBanned');
+    if (!this.displayedColumns.includes('ban'))
+      this.displayedColumns.push('ban');
   }
 
   getClients(): void {
-    this.clientservice.getAllClients().subscribe((c) => (this.clients = c));
+    this.clientService.getAllClients().subscribe((c) => (this.clients = c));
   }
 
-  onDeleteClick(client: Client): void {
-  };
+  onBanClick(client: Client): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.height = '50%';
+    dialogConfig.width = '50%';
+    dialogConfig.data = {
+      entity: client.email,
+      message: `Do you really want to ban ${client.email}?`,
+    };
 
-  onEditClick(client: Client): void {
-  };
+    const umDialog = this.matDialog.open(ConfirmComponent, dialogConfig);
 
+    umDialog.afterClosed().subscribe((result) => {
+      if (result) {
+        //remove banned client from list or not?
+        //this.cargas = this.cargas.filter((item) => item !== carga);
+        this.logSnacks(`${client.email} banned.`, 2000);
+        this.clientService.banClient(client).subscribe((data) => {
+          this.router.navigateByUrl('/clients');
+        });
+      }
+    });
+  }
 
-
-  // onDeleteClick(carga: Carga): void {
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.disableClose = true;
-  //   dialogConfig.autoFocus = true;
-  //   dialogConfig.hasBackdrop = true;
-  //   dialogConfig.height = '50%';
-  //   dialogConfig.width = '50%';
-  //   dialogConfig.data = {
-  //     entity: carga.AWB,
-  //     message: 'Do you really want to delete',
-  //   };
-
-  //   const umDialog = this.matDialog.open(ConfirmComponent, dialogConfig);
-
-  //   umDialog.afterClosed().subscribe((result) => {
-  //     if (result) {
-  //       carga.isActive = false;
-
-  //       this.cargas = this.cargas.filter((item) => item !== carga);
-  //       this.logSnacks(`${carga.AWB} cancelada.`, 2000);
-  //       this.cargaService.updateCarga(carga).subscribe((data) => {
-  //         this.router.navigateByUrl('/cargas');
-  //       });
-  //     }
-  //   });
-  // }
-
-  // onEditClick(carga: Carga): void {
-  //   console.log('on edit click');
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.disableClose = true;
-  //   dialogConfig.autoFocus = true;
-  //   dialogConfig.hasBackdrop = true;
-  //   dialogConfig.height = '50%';
-  //   dialogConfig.width = '50%';
-  //   dialogConfig.data = {
-  //     carga: carga,
-  //   };
-  //   const umDialog = this.matDialog.open(EditCargaComponent, dialogConfig);
-  //   umDialog.afterClosed().subscribe((result) => {
-  //     if (result) {
-  //       this.logSnacks(`${carga.AWB} atualizado.`, 2000);
-  //       this.cargas = this.cargas.filter((item) => item.AWB !== result.AWB);
-  //       this.cargas.unshift(result);
-  //     } else {
-  //       this.logSnacks(`atualização cancelada.`, 2000);
-  //     }
-  //   });
-  // }
-
-  // logSnacks(message: string, time: number): void {
-  //   this.snackBar.open(message, '', { panelClass: 'snacks', duration: time });
-  // }
-
-
-
-
-
+  logSnacks(message: string, time: number): void {
+    this.snackBar.open(message, '', { panelClass: 'snacks', duration: time });
+  }
 }
