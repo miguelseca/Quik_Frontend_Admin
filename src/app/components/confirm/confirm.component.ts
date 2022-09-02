@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CONFIG } from 'src/assets/config';
 
 @Component({
   selector: 'app-confirm',
@@ -7,8 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./confirm.component.css'],
 })
 export class ConfirmComponent implements OnInit {
-  confirmButtonText = 'Confirm';
-  cancelButtonText = 'Cancel';
+  confirmButtonText = CONFIG.CONFIRM_BUTTON_TEXT;
+  cancelButtonText = CONFIG.CANCEL_BUTTON_TEXT;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

@@ -2,6 +2,11 @@ export const CONFIG = {
     title: 'QUIK ADMIN SYSTEM',
 
 
+    CONFIRM_BUTTON_TEXT: "Confirm",
+    CANCEL_BUTTON_TEXT: "Cancel",
+
+
+
     //================= URL's ===========================
     DRIVERS_URL: 'http://127.0.0.1:1000/api/driver',
     TRIPS_URL: 'http://127.0.0.1:1000/api/getAllTrips',
