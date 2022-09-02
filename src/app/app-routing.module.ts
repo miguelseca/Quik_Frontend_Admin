@@ -15,21 +15,21 @@ const routes: Routes = [
   {
     path: 'login',component: LoginPageComponent,
   },{
-    path: 'dashboard',component: DashboardComponent,//canActivate:[AuthGuardService]
+    path: 'dashboard',component: DashboardComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Users',component: LoginPageComponent,//canActivate:[AuthGuardService]
+    path: 'chart-Users',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Revenue',component: LoginPageComponent,//canActivate:[AuthGuardService]
+    path: 'chart-Revenue',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'chart-Drivers',component: LoginPageComponent,//canActivate:[AuthGuardService]
+    path: 'chart-Drivers',component: LoginPageComponent,canActivate:[AuthGuardService]
   },{
-    path: 'issues',component: IssuesComponent,//canActivate:[AuthGuardService]
+    path: 'issues',component: IssuesComponent,canActivate:[AuthGuardService]
   },{
-    path: 'clients',component: ClientsComponent,//canActivate:[AuthGuardService]
+    path: 'clients',component: ClientsComponent,canActivate:[AuthGuardService]
   },{
-    path: 'drivers',component: DriversComponent,//canActivate:[AuthGuardService]
+    path: 'drivers',component: DriversComponent,canActivate:[AuthGuardService]
   },{
-    path: 'profile',component: LoginPageComponent,//canActivate:[AuthGuardService]
+    path: 'profile',component: LoginPageComponent,canActivate:[AuthGuardService]
   },
 ];
 
