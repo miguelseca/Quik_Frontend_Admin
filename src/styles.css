@@ -21,3 +21,8 @@ body {
   color: white;
 
 }
+.advanced-pie-legend .legend-items-container .legend-items {
+  white-space: nowrap;
+  overflow: visible !important ;
+
+}
