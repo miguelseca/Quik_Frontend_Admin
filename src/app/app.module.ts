@@ -63,6 +63,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Interceptor } from './interceptors/interceptor';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { NewDriverComponent } from './new-driver/new-driver.component';
+import { EditDriverComponent } from './edit-driver/edit-driver.component';
 
 //*===============================================================================
 
@@ -75,6 +77,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     IssuesComponent,
     ClientsComponent,
     ConfirmComponent,
+    NewDriverComponent,
+    EditDriverComponent,
   ],
   imports: [
     BrowserModule,
