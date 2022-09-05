@@ -26,3 +26,8 @@ body {
   overflow: visible !important ;
 
 }
+
+.mat-body, .mat-body-1, .mat-typography .mat-body, .mat-typography .mat-body-1, .mat-typography {
+  font: 400 14px/32px Roboto,"Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+}
