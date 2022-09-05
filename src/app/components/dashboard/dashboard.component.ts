@@ -25,27 +25,28 @@ export class DashboardComponent {
   showLabels: boolean = true;
   isDoughnut: boolean = false;
 
-  // colorScheme = {
-  //   domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  // };
-
   single = [
     {
-      name: 'Germany',
-      value: 89,
+      name: 'Quik',
+      value: 9,
     },
     {
-      name: 'USA',
-      value: 50,
+      name: 'Quik Green',
+      value: 2,
     },
     {
-      name: 'France',
-      value: 720,
+      name: 'Quik Confort',
+      value: 10,
     },
     {
-      name: 'UK',
-      value: 62,
+      name: 'Quik XL',
+      value: 6,
     },
+    {
+      name: 'Quik Deluxe',
+      value: 6,
+    },
+
   ];
 
   constructor(
@@ -58,7 +59,6 @@ export class DashboardComponent {
   }
 
   onSelect(data: any): void {
-    this.getAllTrips();
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
