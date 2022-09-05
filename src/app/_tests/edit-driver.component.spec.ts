@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditDriverComponent } from '../edit-driver/edit-driver.component';
+import { EditDriverComponent } from '../components/edit-driver/edit-driver.component';
 
 describe('EditDriverComponent', () => {
   let component: EditDriverComponent;

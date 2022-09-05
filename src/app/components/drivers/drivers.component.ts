@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
 import { ConfirmComponent } from '../confirm/confirm.component';
-//import { EditCargaComponent } from '../edit-carga/edit-carga.component';
 
 @Component({
   selector: 'app-drivers',
