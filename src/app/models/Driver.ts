@@ -11,10 +11,10 @@ export default interface Driver {
       licensePlate: string;
     };
     shift: number;
-    lastTrip: Date;
-    lastTripTime: number;
-    lastTripLocation: number[];
-    currentLocation: number[];
-    startLocation: number[];
-    isBooked: boolean;
+    lastTrip?: Date;
+    lastTripTime?: number;
+    lastTripLocation?: number[];
+    currentLocation?: number[];
+    startLocation?: number[];
+    isBooked?: boolean;
   }
