@@ -16,6 +16,8 @@ export class DashboardComponent {
   trips: Trip[] = [];
   total_trips: number = 0;
   total_cost: number = 0;
+  trips_today: number = 0;
+
 
   view: [number, number] = [600, 200];
 
@@ -77,6 +79,7 @@ export class DashboardComponent {
       for (let i = 0; i < this.trips.length; i++) {
         this.total_cost += this.trips[i].cost;
       }
+
     });
   }
 
