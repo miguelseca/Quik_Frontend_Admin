@@ -1,0 +1,13 @@
+* {
+  text-align: center;
+}
+
+.new-carga-form {
+  background-color: lightsteelblue;
+  align-items: stretch;
+
+}
+
+.mat-form-field {
+  margin-inline: 20px;
+}

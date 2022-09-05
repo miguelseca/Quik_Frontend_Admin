@@ -1,0 +1,55 @@
+<form [formGroup]="driverForm" (ngSubmit)="onSubmit()" class="new-carga-form">
+  <p>Create New Driver</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>AWB</mat-label>
+    <input matInput class="cargaInput" type="text" placeholder="enter AWB" formControlName="AWB">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Origem</mat-label>
+    <input matInput class="cargaInput" type="text" placeholder="origem" formControlName="origin">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Destino</mat-label>
+    <input matInput class="cargaInput" type="text" placeholder="destino" formControlName="destination">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Peças</mat-label>
+    <input matInput class="cargaInput" type="number" placeholder="pecas" formControlName="pieces">
+  </mat-form-field>
+  <br>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Peso(Kg)</mat-label>
+    <input matInput class="cargaInput" type="number" placeholder="peso" formControlName="weight">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Volume</mat-label>
+    <input matInput class="cargaInput" type="number" placeholder="volume" formControlName="volume">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput class="cargaInput" type="text" placeholder="description" formControlName="description">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Voo</mat-label>
+    <input matInput class="cargaInput" type="text" placeholder="flight" formControlName="flight">
+  </mat-form-field>
+  <br>
+
+
+  <button mat-raised-button (click)="onSubmit()">Criar Nova Carga</button>
+  <br>
+
+</form>
