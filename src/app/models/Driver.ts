@@ -17,4 +17,5 @@ export default interface Driver {
     currentLocation?: number[];
     startLocation?: number[];
     isBooked?: boolean;
+    isEdit?: boolean;
   }
