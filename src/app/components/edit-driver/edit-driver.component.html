@@ -1,1 +1,38 @@
-<p>edit-driver works!</p>
+
+<form [formGroup]="editForm" class="new-voo-form">
+
+  <mat-dialog-content>
+    <p>
+      {{message}} {{driver.email}}
+    </p>
+  </mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput id="firstName" type="text" formControlName="firstName">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput id="lastName" type="text" formControlName="lastName">
+
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Shift</mat-label>
+    <input matInput id="shift" type="number" formControlName="shift">
+
+  </mat-form-field>
+  <br>
+
+  <mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
+    <button mat-raised-button mat-dialog-close tabindex="-1" (click)="onCancelClick()">{{cancelButtonText}}</button>
+  </mat-dialog-actions>
+
+</form>
+
+
+
+

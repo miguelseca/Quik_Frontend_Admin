@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
 import { ConfirmComponent } from '../confirm/confirm.component';
+import { EditDriverComponent } from '../edit-driver/edit-driver.component';
 
 @Component({
   selector: 'app-drivers',
@@ -120,16 +121,16 @@ export class DriversComponent implements OnInit {
     dialogConfig.data = {
       driver: driver,
     };
-    // const umDialog = this.matDialog.open(EditCargaComponent, dialogConfig);
-    // umDialog.afterClosed().subscribe((result) => {
-    //   if (result) {
-    //     this.logSnacks(`${carga.AWB} atualizado.`, 2000);
-    //     this.cargas = this.cargas.filter((item) => item.AWB !== result.AWB);
-    //     this.cargas.unshift(result);
-    //   } else {
-    //     this.logSnacks(`atualização cancelada.`, 2000);
-    //   }
-    // });
+    const umDialog = this.matDialog.open(EditDriverComponent, dialogConfig);
+    umDialog.afterClosed().subscribe((result) => {
+      if (result) {
+        this.logSnacks(`${driver.email} atualizado.`, 2000);
+        this.drivers = this.drivers.filter((item) => item.nif !== result.nif);
+        this.drivers.unshift(result);
+      } else {
+        this.logSnacks(`atualização cancelada.`, 2000);
+      }
+    });
   }
 
   logSnacks(message: string, time: number): void {
