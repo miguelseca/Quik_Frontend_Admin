@@ -39,11 +39,13 @@ export class LoginPageComponent implements OnInit {
     };
 
     this.loginService.login(theUser).subscribe((data) => {
+
+      console.log(data);
       console.log('role received ' + data.role);
       console.log('token provided: ' + data.token);
       if (data.role == 'admin') {
         this.router.navigateByUrl('/dashboard');
-        localStorage.setItem('token', JSON.stringify(data));
+        localStorage.setItem('token', JSON.stringify(data.token));
         localStorage.setItem('user', JSON.stringify(this.loginForm.value.username));
 
       } else {
