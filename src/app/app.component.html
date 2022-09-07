@@ -12,7 +12,7 @@
             <h3> {{user_name}} </h3>
 
             <button>
-                <mat-icon (click)="logOut()" >exit_to_app</mat-icon>
+                <mat-icon (click)="logOut()">exit_to_app</mat-icon>
             </button>
 
 
@@ -20,21 +20,24 @@
     </div>
 
     <div class="sidebar">
-      <a routerLink="/dashboard">Dashboard</a>
-      <a routerLink="/drivers">Drivers</a>
-      <a routerLink="/clients">Clients</a>
-      <a routerLink="/issues">Issues</a>
-      <a routerLink="/chart-Drivers">Charts</a>
-
-
+        <ul>
+            <li><a routerLink="/dashboard">
+                    <mat-icon class="icon">dashboard</mat-icon><span class="texto">Dashboard</span>
+                </a></li>
+            <li><a routerLink="/drivers">
+                    <mat-icon class="icon"> directions_car</mat-icon><span class="texto"> Drivers</span>
+                </a></li>
+            <li><a routerLink="/clients">
+                    <mat-icon class="icon">supervisor_account</mat-icon><span class="texto">Clients</span>
+                </a></li>
+            <li><a routerLink="/issues">
+                    <mat-icon class="icon">report_problem</mat-icon><span class="texto">Issues</span>
+                </a></li>
+            <li><a routerLink="/chart-Drivers">
+                    <mat-icon class="icon">show_chart</mat-icon><span class="texto"> Charts</span>
+                </a></li>
+        </ul>
     </div>
-
-
-
-
-
 </div>
 
 <router-outlet></router-outlet>
-
-

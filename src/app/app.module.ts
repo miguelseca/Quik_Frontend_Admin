@@ -51,6 +51,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DialogModule } from '@angular/cdk/dialog';
+import { FormsModule } from '@angular/forms';
+
 
 //*================= COMPONENTS ==================================================
 import { AppComponent } from './app.component';
@@ -66,6 +68,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { NewDriverComponent } from './components/new-driver/new-driver.component';
 import { EditDriverComponent } from './components/edit-driver/edit-driver.component';
 
+
 //*===============================================================================
 
 @NgModule({
@@ -79,6 +82,7 @@ import { EditDriverComponent } from './components/edit-driver/edit-driver.compon
     ConfirmComponent,
     NewDriverComponent,
     EditDriverComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -148,6 +152,7 @@ import { EditDriverComponent } from './components/edit-driver/edit-driver.compon
     MatButtonModule,
     MatInputModule,
     NgxChartsModule,
+    FormsModule,
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
@@ -17,6 +20,12 @@ import { EditDriverComponent } from '../edit-driver/edit-driver.component';
 export class DriversComponent implements OnInit {
   drivers: Driver[] = [];
   displayedColumns: string[] = [];
+  dataSource!: MatTableDataSource<Driver>;
+
+  @ViewChild('page')
+  paginator!: MatPaginator;
+
+  @ViewChild(MatSort) sort!: MatSort;
 
   toppings = this._formBuilder.group({
     nif: true,
@@ -82,7 +91,26 @@ export class DriversComponent implements OnInit {
   }
 
   getDrivers(): void {
-    this.driversService.getDrivers().subscribe((c) => (this.drivers = c));
+    this.driversService.getDrivers().subscribe((c) => {
+      this.drivers = c;
+      this.dataSource = new MatTableDataSource((this.drivers = c));
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.dataSource.sortingDataAccessor = (item, property) => {
+        switch (property) {
+          case 'code':
+            return item.service.code;
+          case 'carBrand':
+            return item.service.carBrand;
+          case 'carModel':
+            return item.service.carModel;
+          case 'licensePlate':
+            return item.service.licensePlate;
+          default:
+            return item[property];
+        }
+      };
+    });
   }
 
   onDeleteClick(driver: Driver): void {
@@ -101,7 +129,6 @@ export class DriversComponent implements OnInit {
 
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
-
         this.drivers = this.drivers.filter((item) => item !== driver);
         this.logSnacks(`${driver.email} was deleted.`, 2000);
         this.driversService.deleteDriver(driver).subscribe((data) => {

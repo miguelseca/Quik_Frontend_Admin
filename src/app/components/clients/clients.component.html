@@ -1,5 +1,5 @@
 <div class="book-container">
-
+  <h1><strong>Clients List</strong></h1>
   <button mat-button [matMenuTriggerFor]="menu">Options</button>
 
   <mat-menu #menu="matMenu" [formGroup]="toppings">
@@ -72,3 +72,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <mat-paginator id="paginator" #page [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
