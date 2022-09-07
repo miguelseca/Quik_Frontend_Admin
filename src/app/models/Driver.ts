@@ -4,12 +4,7 @@ export default interface Driver {
     lastName: string;
     phone: number;
     email: string;
-    service: {
-      code: number;
-      carBrand: string;
-      carModel: string;
-      licensePlate: string;
-    };
+    service: Service;
     shift: number;
     lastTrip?: Date;
     lastTripTime?: number;
@@ -18,4 +13,11 @@ export default interface Driver {
     startLocation?: number[];
     isBooked?: boolean;
     isEdit?: boolean;
+  }
+
+  export interface Service {
+      code: number;
+      carBrand: string;
+      carModel: string;
+      licensePlate: string;
   }
