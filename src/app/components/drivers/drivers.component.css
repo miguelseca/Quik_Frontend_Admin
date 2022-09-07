@@ -1,12 +1,19 @@
+.fundo{
+  height: 100%;
+  background-color: lightsteelblue;
+}
 table {
   width: 100%;
   background-color: lightgrey;
+  /* border: 2px solid red; */
 
 }
 
 .book-container {
+  height: fit-content;
   background-color: lightsteelblue;
   padding: 20px 30px 30px 50px;
+  /* border: 2px solid red; */
 }
 
 .operations-button {
@@ -26,5 +33,9 @@ table {
 .operations-button:hover {
   background-color: black;
   color: white;
+}
+
+#paginator{
+  background-color: lightgrey;
 }
 

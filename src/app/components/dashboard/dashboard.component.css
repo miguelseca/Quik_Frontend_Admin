@@ -71,10 +71,7 @@
   padding: 20px;
   font-size: 30px;
   border-radius: 25px;
-  
 }
-
-
 
 .item2 {
   grid-column: 3;
@@ -85,6 +82,7 @@
   grid-column: 1 / span 3;
   grid-row: 3;
 }
+
 .item6 {
   /* border: 2px solid red; */
 }
