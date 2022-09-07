@@ -152,8 +152,7 @@ export class DriversComponent implements OnInit {
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
         this.logSnacks(`${driver.email} atualizado.`, 2000);
-        this.drivers = this.drivers.filter((item) => item.nif !== result.nif);
-        this.drivers.unshift(result);
+        this.getDrivers();
       } else {
         this.logSnacks(`atualização cancelada.`, 2000);
       }
