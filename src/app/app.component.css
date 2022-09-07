@@ -26,6 +26,7 @@ body{
  
 }
 .sidebar {
+    /* color: black; */
     height: 100%;
     width: 30px;
     position: fixed;
@@ -35,31 +36,49 @@ body{
     background-color: #111;
     overflow-x: hidden;
     padding-top: 16px;
+    /* border: 2px solid white; */
   }
 
+.icon{
+  color: #818181;
+}
+
 .sidebar:hover {
+  color: white;
     height: 100%;
     width: 160px;
     position: fixed;
     z-index: 1;
     top: 10;
     left: 0;
-    background-color: #111;
+    /* background-color: #111; */
     overflow-x: hidden;
-    padding-top: 16px;
+    padding: 20px;
+    /* border: 2px solid red; */
+    /* text-align: center; */
   }
+.icon{
+  /* border: 2px solid red; */
+  justify-content: left;
+}
 
 .sidebar a {
-    padding: 6px 28px 6px 30px;
+    padding: 6px 28px 6px 0px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
-    display: block;
+    color: white;
+    display: block;    
+    /* visibility: hidden; */
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
 }
-  
-.sidebar a:hover {
-    color: #f1f1f1;
+
+.sidebar a :hover {
+    color:lightgrey;
+    visibility: visible;
 }
+
 
 .grid-container {
   display: grid;
@@ -87,4 +106,21 @@ body{
   grid-row: 3;
 }
 
+.icondashboard{
+  font-size: 0cm;
+  border: 2px solid red;
+}
 
+.icondriver{
+border: 2px solid red;
+}
+
+span{
+  font-size: small;
+}
+
+ul,li{
+  
+  padding-left: 0;
+  /* border: 2px solid red; */
+}
