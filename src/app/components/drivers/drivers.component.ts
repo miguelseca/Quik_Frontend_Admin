@@ -11,6 +11,7 @@ import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
 import { ConfirmComponent } from '../confirm/confirm.component';
 import { EditDriverComponent } from '../edit-driver/edit-driver.component';
+import { NewDriverComponent } from '../new-driver/new-driver.component';
 
 @Component({
   selector: 'app-drivers',
@@ -68,6 +69,10 @@ export class DriversComponent implements OnInit {
       'delete',
     ];
   }
+  
+  createDriver() {
+    this.matDialog.open(NewDriverComponent);
+  } 
 
   onChange(event: MatCheckboxChange): void {
     this.displayedColumns = [];
