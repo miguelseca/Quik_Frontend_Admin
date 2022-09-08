@@ -1,0 +1,396 @@
+commit 1d3e49890576943a7707f6800a7d4813ad120481	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Wed Sep 7 12:12:07 2022 +0100
+
+    code cleaup
+
+M	src/app/components/login-page/login-page.component.ts
+
+commit 5a270b75330f6b38f8b256f4bf184bb95744198a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Wed Sep 7 12:11:53 2022 +0100
+
+    url updated
+
+M	src/assets/config.ts
+
+commit b4d16c6d1c18e992d16756c75e6d3ec6ef03d65a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Tue Sep 6 09:44:28 2022 +0100
+
+    driver component update
+
+M	src/app/components/drivers/drivers.component.ts
+M	src/app/components/edit-driver/edit-driver.component.css
+M	src/app/components/edit-driver/edit-driver.component.html
+M	src/app/components/edit-driver/edit-driver.component.ts
+
+commit b1e6ecfb92f92514e694f71316c40049bd15d76f	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 14:24:37 2022 +0100
+
+    code cleanup
+
+M	src/app/components/drivers/drivers.component.html
+
+commit 6fa223a56678b5bddbdbfc95c7a4d11b2770c41d	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 14:23:40 2022 +0100
+
+    folder restructuring
+
+M	src/app/_tests/edit-driver.component.spec.ts
+M	src/app/_tests/new-driver.component.spec.ts
+M	src/app/app-routing.module.ts
+M	src/app/app.module.ts
+M	src/app/components/drivers/drivers.component.ts
+R100	src/app/edit-driver/edit-driver.component.css	src/app/components/edit-driver/edit-driver.component.css
+R100	src/app/edit-driver/edit-driver.component.html	src/app/components/edit-driver/edit-driver.component.html
+R100	src/app/edit-driver/edit-driver.component.ts	src/app/components/edit-driver/edit-driver.component.ts
+R100	src/app/new-driver/new-driver.component.css	src/app/components/new-driver/new-driver.component.css
+R100	src/app/new-driver/new-driver.component.html	src/app/components/new-driver/new-driver.component.html
+R093	src/app/new-driver/new-driver.component.ts	src/app/components/new-driver/new-driver.component.ts
+
+commit 30eee9e78cd67a8f9051da95716241abef5c1ad2	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 12:39:47 2022 +0100
+
+    today's trips added
+
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit 7428ac13a71c5dd602bdc6160b967bf4aca6fabc	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 12:39:26 2022 +0100
+
+    driver model updated
+
+M	src/app/models/Driver.ts
+
+commit a2b7f3f307bb4585778a0a22857ff28ab390e15a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 10:43:05 2022 +0100
+
+    new components added
+
+A	src/app/_tests/edit-driver.component.spec.ts
+A	src/app/_tests/new-driver.component.spec.ts
+A	src/app/edit-driver/edit-driver.component.css
+A	src/app/edit-driver/edit-driver.component.html
+A	src/app/edit-driver/edit-driver.component.ts
+A	src/app/new-driver/new-driver.component.css
+A	src/app/new-driver/new-driver.component.html
+A	src/app/new-driver/new-driver.component.ts
+
+commit faab57819891fea90b197cd876ac5bb900d73560	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 10:42:45 2022 +0100
+
+    added "create new driver" button
+
+M	src/app/components/drivers/drivers.component.html
+
+commit a8d9f8c141102821408c7413bf2543f6bd2d6b5c	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 10:42:17 2022 +0100
+
+    code cleanup
+
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit bc039dc65b2595550dbe186f00644572373a019b	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Mon Sep 5 10:41:51 2022 +0100
+
+    driver model updated
+
+M	src/app/models/Driver.ts
+
+commit f5e8cb491fd7b300caa5dafb5b8ff6198e6b7861	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Sun Sep 4 12:37:47 2022 +0100
+
+    new components added
+
+M	src/app/app-routing.module.ts
+M	src/app/app.module.ts
+
+commit 2a3a0d8f714159231f44c1be1c2ec7fa1d519917	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 16:41:53 2022 +0100
+
+    code cleanup
+
+M	src/app/app-routing.module.ts
+M	src/app/services/auth-guard.service.ts
+M	src/app/services/clients.service.ts
+
+commit 933b2d71894cd8e35845f01b348c77663676d6bc	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 16:38:02 2022 +0100
+
+    code cleanup
+
+M	src/app/app.component.ts
+
+commit 92ef7a3406159ff79ad2dfcc002de49bd8e0ac83	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 15:08:03 2022 +0100
+
+    routes unprotected (for debugging)
+
+M	src/app/app-routing.module.ts
+
+commit c2425eeefe1461af01539cd97d1a37f214b5cc93	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 15:04:54 2022 +0100
+
+    merge resolved
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit a8a3088e5f485a22f9e74da6ad2ac25d8657acef	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 15:03:02 2022 +0100
+
+    code cleanup
+
+M	src/app/components/confirm/confirm.component.html
+M	src/app/components/confirm/confirm.component.ts
+M	src/app/services/drivers.service.ts
+M	src/assets/config.ts
+
+commit 0501f53ebd9b20e633a679e6b8b76b539f18864c	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:49:26 2022 +0100
+
+    refactoring login method
+
+M	src/app/components/login-page/login-page.component.ts
+
+commit 97eba28f447ddc944edcaa70e088b047b9c7d156	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:49:07 2022 +0100
+
+    code cleanup
+
+M	src/app/services/trips.service.ts
+
+commit 2adb9ba35902143eb2bc58e19a996de6403f875d	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:48:55 2022 +0100
+
+    cosmetic changes
+
+M	src/app/app.component.html
+
+commit abf5d4cd09ea3cfeda40c849199d99f3e3dc994a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:48:40 2022 +0100
+
+    total cost an total trips now appear on dashboard
+
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit 82d65236a3c4df8f12f357fd37d627219c621145	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:48:09 2022 +0100
+
+    auth guard implemented
+
+A	src/app/_tests/auth-guard.service.spec.ts
+M	src/app/app-routing.module.ts
+A	src/app/services/auth-guard.service.ts
+
+commit dc75c6d4bc74ae9290a98dddb7ca572b27daf4cd	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:47:53 2022 +0100
+
+    folder organization
+
+R095	src/app/app.component.spec.ts	src/app/_tests/app.component.spec.ts
+
+commit 1b0643765ff9c4423136450dfa2309ff6ccb34ce	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 14:47:28 2022 +0100
+
+    log out button implemented
+
+M	src/app/app.component.ts
+
+commit 457af4dc6d0b1522105da13c73561709ac9cd5bc	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 13:19:42 2022 +0100
+
+    routing updated
+
+M	src/app/app-routing.module.ts
+
+commit 2f4a2b02c06fec74e51147b38eedc949f174c8f8	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:22:51 2022 +0100
+
+    driver component now presents table
+
+M	src/app/components/drivers/drivers.component.css
+M	src/app/components/drivers/drivers.component.html
+M	src/app/components/drivers/drivers.component.ts
+
+commit 20c279cbacc12667c40cd977b657d4d8114ce25c	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:22:39 2022 +0100
+
+    client component now presents table
+
+M	src/app/components/clients/clients.component.html
+M	src/app/components/clients/clients.component.ts
+
+commit 0feba023cc58cacc5fc88e10e1db5dbbc27305bd	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:22:11 2022 +0100
+
+    interceptor implemented
+
+M	src/app/interceptors/interceptor.ts
+
+commit 2d27520ce4d9f2a71592c898453868d0b5cafd41	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:21:50 2022 +0100
+
+    confirm component added
+
+A	src/app/_tests/confirm.component.spec.ts
+
+commit a510f97912f3fc0bf8320b7396a24f9d4ac71f38	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:21:39 2022 +0100
+
+    confirm component added
+
+M	src/app/app.module.ts
+A	src/app/components/confirm/confirm.component.css
+A	src/app/components/confirm/confirm.component.html
+A	src/app/components/confirm/confirm.component.ts
+
+commit 6923ef05e2224423f21b364047c50405d4be2064	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:21:20 2022 +0100
+
+    code cleanup
+
+M	src/app/services/clients.service.ts
+
+commit d8407dad2371b38fd28001e37485de093bc2d5ae	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:21:04 2022 +0100
+
+    styling
+
+M	src/app/app.component.html
+M	src/styles.css
+
+commit 73d504bda94bcc1807642198f76caa53e99f68d0	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Fri Sep 2 11:19:40 2022 +0100
+
+    styliing
+
+M	src/styles.css
+
+commit 70ba519629a357bec9c0019b3b209eef9d67d14a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 15:51:38 2022 +0100
+
+    navbar links updated
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit 7cc90f65293b8f53020d076cf78da0c104e42fa8	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 15:49:25 2022 +0100
+
+    URL's updated
+
+M	src/assets/config.ts
+
+commit c6f33a10c5669f3027a35a9e204449a3b51cc36a	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 15:48:48 2022 +0100
+
+    clients component table implemented
+
+M	src/app/components/clients/clients.component.css
+M	src/app/components/clients/clients.component.html
+M	src/app/components/clients/clients.component.ts
+
+commit e34e2f8ae118dce892faa38daf22fefb2c4c5548	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 15:48:20 2022 +0100
+
+    routing update
+
+M	src/app/app-routing.module.ts
+
+commit 1e4648b659100a46fe40259112f3896e83a6e960	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 14:46:51 2022 +0100
+
+    updated
+
+M	src/app/services/issues.service.ts
+
+commit a24c98b74401203e0802f266a43d73a71aa99dc8	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 14:46:42 2022 +0100
+
+    updated
+
+M	src/app/services/drivers.service.ts
+
+commit 4c9034dd23051dbb66efa190821947aae44b0675	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 14:46:37 2022 +0100
+
+    updated
+
+M	src/app/services/clients.service.ts
+
+commit 1a7b0f7d12662b2c4aa01cb762e6ed2bf4f6779e	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 14:46:33 2022 +0100
+
+    updated
+
+M	src/app/services/login.service.ts
+
+commit 47572111bdc639fdf410148e89f5e65199a09fd0	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 14:46:17 2022 +0100
+
+    trip service created
+
+A	src/app/_tests/trips.service.spec.ts
+A	src/app/services/trips.service.ts
+
+commit 0ddad6ae05454af4042b3b0acfa95e5b90f54220	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 13:40:20 2022 +0100
+
+    login service implemented
+
+M	src/app/components/login-page/login-page.component.css
+M	src/app/components/login-page/login-page.component.html
+M	src/app/components/login-page/login-page.component.ts
+A	src/app/interceptors/interceptor.ts
+M	src/app/services/login.service.ts
+
+commit 62d73e083321d0af005809c86c9d83fbcf64e93c	refs/remotes/origin/tables
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 1 13:40:00 2022 +0100
+
+    new modules added
+
+M	angular.json
+M	src/app/app.module.ts
