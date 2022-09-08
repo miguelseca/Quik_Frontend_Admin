@@ -136,6 +136,7 @@ export class DriversComponent implements OnInit {
       if (result) {
         this.drivers = this.drivers.filter((item) => item !== driver);
         this.logSnacks(`${driver.email} was deleted.`, 2000);
+        this.getDrivers();
         this.driversService.deleteDriver(driver).subscribe((data) => {
           this.router.navigateByUrl('/drivers');
         });

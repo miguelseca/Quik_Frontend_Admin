@@ -13,7 +13,7 @@ export const CONFIG = {
   // BAN_CLIENTS_URL: 'http://127.0.0.1:1000/api/ban/client/',
 
   //================= HEROKU URL's ===========================
-  DRIVERS_URL: 'https://quikbackend.herokuapp.com/api/driver',
+  DRIVERS_URL: 'https://quikbackend.herokuapp.com/api/driver/',
   TRIPS_URL: 'https://quikbackend.herokuapp.com//api/getAllTrips',
   LOGIN_URL: 'https://quikbackend.herokuapp.com/api/login',
   ISSUES_URL: 'https://quikbackend.herokuapp.com/api/issues',
