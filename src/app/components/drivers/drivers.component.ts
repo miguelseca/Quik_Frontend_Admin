@@ -69,10 +69,10 @@ export class DriversComponent implements OnInit {
       'delete',
     ];
   }
-  
+
   createDriver() {
     this.matDialog.open(NewDriverComponent);
-  } 
+  }
 
   onChange(event: MatCheckboxChange): void {
     this.displayedColumns = [];
