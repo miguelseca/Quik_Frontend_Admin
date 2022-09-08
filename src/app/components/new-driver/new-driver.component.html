@@ -1,73 +1,74 @@
-<form [formGroup]="driverForm" (ngSubmit)="onSubmit()" class="new-carga-form">
+<form [formGroup]="driverForm" (ngSubmit)="onSubmit()">
   <p>Create New Driver</p>
 
   <mat-form-field appearance="fill">
     <mat-label>Nif</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="enter AWB" formControlName="AWB">
+    <input matInput class="Nif" type="number" placeholder="nif" formControlName="nif">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>FirstName</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="origem" formControlName="origin">
+    <input matInput class="firstName" type="text" placeholder="FirstName" formControlName="firstName">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>LastName</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="destino" formControlName="destination">
+    <input matInput class="lastName" type="text" placeholder="LastName" formControlName="lastName">
   </mat-form-field>
 
-  <br>
+
   <mat-form-field appearance="fill">
     <mat-label>Phone</mat-label>
-    <input matInput class="cargaInput" type="number" placeholder="pecas" formControlName="pieces">
+    <input matInput class="phone" type="number" placeholder="Phone" formControlName="phone">
   </mat-form-field>
-  <br>
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput class="cargaInput" type="number" placeholder="peso" formControlName="weight">
+    <input matInput class="email" type="email" placeholder="Email" formControlName="email">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>Code</mat-label>
-    <input matInput class="cargaInput" type="number" placeholder="volume" formControlName="volume">
+    <input matInput class="code" type="number" placeholder="Code" formControlName="code">
   </mat-form-field>
-  <br>
+
   <mat-form-field appearance="fill">
     <mat-label>CarBrand</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="description" formControlName="description">
+    <input matInput class="carBrand" type="text" placeholder="CarBrand" formControlName="carBrand">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>CarModel</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="flight" formControlName="flight">
+    <input matInput class="carModel" type="text" placeholder="CarModel" formControlName="carModel">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>LicensePlate</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="flight" formControlName="flight">
+    <input matInput class="licensePlate" type="text" placeholder="LicensePlate" formControlName="licensePlate">
   </mat-form-field>
-  <br>
+
 
   <mat-form-field appearance="fill">
     <mat-label>Shift</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="flight" formControlName="flight">
+    <input matInput class="shift" type="number" placeholder="Shift" formControlName="shift">
   </mat-form-field>
-  <br>
 
-  <mat-form-field appearance="fill">
+
+  <!-- <mat-form-field appearance="fill">
     <mat-label>LastTrip</mat-label>
-    <input matInput class="cargaInput" type="text" placeholder="flight" formControlName="flight">
+    <input matInput class="LastTrip" type="text" placeholder="LastTrip" formControlName="LastTrip">
   </mat-form-field>
-  <br>
+   -->
 
 
-  <button mat-raised-button (click)="onSubmit()">Criar Nova Carga</button>
   <br>
+  <button mat-raised-button (click)="onSubmit">
+    <mat-icon>done</mat-icon>
+  </button>
 
 </form>

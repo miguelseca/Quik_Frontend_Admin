@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  MinLengthValidator,
+  MinValidator,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
-import Driver from '../../models/driver';
+import Driver, { Service } from '../../models/driver';
 import { DriversService } from '../../services/drivers.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-driver',
@@ -10,44 +17,62 @@ import { DriversService } from '../../services/drivers.service';
   styleUrls: ['./new-driver.component.css'],
 })
 export class NewDriverComponent implements OnInit {
-  driverForm: any;
+  driverForm!: FormGroup;
+  driver: Driver;
 
-  constructor(private driverService: DriversService, private router: Router) {}
+  constructor(
+    private driverService: DriversService,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialogRef: MatDialogRef<NewDriverComponent>
+  ) {}
 
   ngOnInit(): void {
     this.driverForm = new FormGroup({
-      nif: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl(''),
-      code: new FormControl(''),
-      carBrand: new FormControl(''),
-      carModel: new FormControl(''),
-      licensePlate: new FormControl(''),
-      shift: new FormControl(''),
+      nif: new FormControl('', [
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(9),
+      ]),
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(9),
+      ]),
+      email: new FormControl('', [Validators.required]),
+      code: new FormControl('', [Validators.required]),
+      carBrand: new FormControl('', [Validators.required]),
+      carModel: new FormControl('', [Validators.required]),
+      licensePlate: new FormControl('', [Validators.required]),
+      shift: new FormControl('', [Validators.required]),
     });
   }
 
   onSubmit() {
-    const driver: Driver = {
-      nif: this.driverForm.value.nif,
-      firstName: this.driverForm.value.firstName,
-      lastName: this.driverForm.value.lastName,
-      phone: this.driverForm.value.phone,
-      email: this.driverForm.value.email,
-
-      service: {
+    if (this.driverForm.valid) {
+      console.log('0: ' + JSON.stringify(this.driverForm.value));
+      const x: Service = {
         code: this.driverForm.value.code,
         carBrand: this.driverForm.value.carBrand,
         carModel: this.driverForm.value.carModel,
         licensePlate: this.driverForm.value.licensePlate,
-      },
-      shift: this.driverForm.value.shift,
-    };
+      };
+      console.log('cheguei');
+      const umDriver: Driver = {
+        nif: this.driverForm.value.nif,
+        firstName: this.driverForm.value.firstName,
+        lastName: this.driverForm.value.lastName,
+        phone: this.driverForm.value.phone,
+        email: this.driverForm.value.email,
+        service: x,
+        shift: this.driverForm.value.shift,
+      };
+      console.log('1: ' + JSON.stringify(umDriver));
 
-    this.driverService.createDriver(driver).subscribe((data) => {
-      this.router.navigateByUrl('/driver');
-    });
+      this.driverService.createDriver(umDriver).subscribe((data) => {
+        this.dialogRef.close(this.driver);
+      });
+    }
   }
 }
