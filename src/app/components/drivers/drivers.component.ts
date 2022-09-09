@@ -142,11 +142,11 @@ export class DriversComponent implements OnInit {
 
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
-        this.drivers = this.drivers.filter((item) => item !== driver);
-        this.logSnacks(`${driver.email} was deleted.`, 2000);
-        this.getDrivers();
+        // this.drivers = this.drivers.filter((item) => item !== driver);
         this.driversService.deleteDriver(driver).subscribe((data) => {
+          this.logSnacks(`${driver.email} was deleted.`, 2000);
           this.router.navigateByUrl('/drivers');
+          this.getDrivers();
         });
       }
     });
