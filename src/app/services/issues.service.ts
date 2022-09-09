@@ -3,6 +3,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
 import { CONFIG } from 'src/assets/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Issue from '../models/issue';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ import Issue from '../models/issue';
 export class CargasService {
   private ISSUES_URL = CONFIG.ISSUES_URL;
 
-  private token: string = localStorage.getItem('token')!.slice(1, -1);
+  // private token: string = localStorage.getItem('token')!.slice(1, -1);
+  private token: string = this.tokenStorage.getToken()!.slice(1,-1);
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -19,7 +21,8 @@ export class CargasService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private tokenStorage: TokenStorageService) {}
 
   getAllIssues(): Observable<Issue[]> {
     return this.http.get<Issue[]>(this.ISSUES_URL, this.httpOptions).pipe(
@@ -44,6 +47,6 @@ export class CargasService {
   }
 
   private log(message: string) {
-    console.log(`Cargas Service: ${message}`);
+    console.log(`Issues Service: ${message}`);
   }
 }

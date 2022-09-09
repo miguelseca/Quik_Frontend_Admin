@@ -3,6 +3,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
 import { CONFIG } from 'src/assets/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Client from '../models/client';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,9 @@ export class ClientsService {
   private GET_CLIENTS_URL = CONFIG.GET_CLIENTS_URL;
   private BAN_CLIENTS_URL = CONFIG.BAN_CLIENTS_URL;
 
-  private token: string = localStorage.getItem('token')!.slice(1, -1);
-
+  // private token: string = localStorage.getItem('token')!.slice(1, -1);
+  private token: string = this.tokenStorage.getToken()!.slice(1,-1);
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,7 +22,10 @@ export class ClientsService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private tokenStorage: TokenStorageService,
+   ) {}
 
   getAllClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.GET_CLIENTS_URL, this.httpOptions).pipe(
@@ -47,6 +52,6 @@ export class ClientsService {
   }
 
   private log(message: string) {
-    console.log(`Cargas Service: ${message}`);
+    console.log(`Clients Service: ${message}`);
   }
 }
