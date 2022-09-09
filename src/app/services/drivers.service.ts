@@ -49,7 +49,7 @@ export class DriversService {
 
   deleteDriver(driver: Driver): Observable<any> {
     return this.http
-      .delete<Driver>(this.DRIVERS_URL + driver.nif, this.httpOptions)
+      .delete<Driver>(`${this.DRIVERS_URL}/${driver.nif}`, this.httpOptions)
       .pipe(
         tap(() => this.log(`driver deleted`)),
         catchError(this.handleError<any>('deleteDriver'))

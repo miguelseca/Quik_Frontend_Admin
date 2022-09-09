@@ -36,7 +36,7 @@ export class ClientsService {
 
   banClient(client: Client): Observable<any> {
     return this.http
-      .put(this.BAN_CLIENTS_URL + client.email, this.httpOptions)
+      .put(`${this.BAN_CLIENTS_URL}/${client.email}`, this.httpOptions)
       .pipe(
         tap((_) => this.log(`banned client ${client.email}`)),
         catchError(this.handleError<any>('banClient'))
