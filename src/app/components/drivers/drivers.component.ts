@@ -71,6 +71,7 @@ export class DriversComponent implements OnInit {
   }
 
   createDriver() {
+
     const umDialog = this.matDialog.open(NewDriverComponent);
     umDialog.afterClosed().subscribe((result) => {
       if (result) {

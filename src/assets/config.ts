@@ -1,5 +1,5 @@
 export const CONFIG = {
-    title: 'QUIK ADMIN SYSTEM',
+title: 'QUIK ADMIN SYSTEM',
 
     CONFIRM_BUTTON_TEXT: "Confirm",
     CANCEL_BUTTON_TEXT: "Cancel",
@@ -21,3 +21,4 @@ export const CONFIG = {
     BAN_CLIENTS_URL: 'https://quikbackend.herokuapp.com/api/ban/client',
 
   };
+

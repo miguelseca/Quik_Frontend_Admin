@@ -1,0 +1,80 @@
+007756e,2022-09-08 23:21:57 +0100,Paulo Proença,prp@isep.ipp.pt,Repository Analysis
+6880d22,2022-09-08 15:40:00 +0100,Diogo Mendes,diogomendes@upskill.pt,autorefresh implemented + codereview delete driver
+1596c58,2022-09-08 15:23:27 +0100,Diogo Mendes,diogomendes@upskill.pt,css app + config code review +dashboard css
+325dd2a,2022-09-08 15:22:47 +0100,Diogo Mendes,diogomendes@upskill.pt,create new driver implemented +css
+b0345a5,2022-09-08 15:21:59 +0100,Diogo Mendes,diogomendes@upskill.pt,edit driver implemented
+18b80e2,2022-09-08 15:20:37 +0100,Diogo Mendes,diogomendes@upskill.pt,code review
+ae47522,2022-09-08 15:19:50 +0100,Diogo Mendes,diogomendes@upskill.pt,Added map service on sidebar
+b52ee40,2022-09-07 17:01:24 +0100,Diogo Mendes,diogomendes@upskill.pt,New Driver dialog implemented
+ec32114,2022-09-07 14:46:59 +0100,Diogo Mendes,diogomendes@upskill.pt,Edit driver component modified (Dialog)
+19aee0e,2022-09-07 14:46:05 +0100,Diogo Mendes,diogomendes@upskill.pt,export interface Service added on driver ts
+4865946,2022-09-07 14:45:16 +0100,Diogo Mendes,diogomendes@upskill.pt,Edit driver implemented
+c850de2,2022-09-07 14:44:30 +0100,Diogo Mendes,diogomendes@upskill.pt,AutoRefresh (drivers component ts)
+82f77be,2022-09-07 14:28:31 +0100,Diogo Mendes,diogomendes@upskill.pt,MockPageLayoutAdmin
+1d3e498,2022-09-07 12:12:07 +0100,Miguel Seca,miguel.seca@gmail.com,code cleaup
+5a270b7,2022-09-07 12:11:53 +0100,Miguel Seca,miguel.seca@gmail.com,url updated
+2f8c520,2022-09-07 09:33:20 +0100,Diogo Mendes,diogomendes@upskill.pt,add import {formmodule} on app module.ts
+35f8b05,2022-09-07 09:32:43 +0100,Diogo Mendes,diogomendes@upskill.pt,css component client/ dashboard / driver
+abc1b4e,2022-09-07 09:29:32 +0100,Diogo Mendes,diogomendes@upskill.pt,css app component
+0baeec9,2022-09-07 09:29:06 +0100,Diogo Mendes,diogomendes@upskill.pt,Sort on mat table (html)
+b4d16c6,2022-09-06 09:44:28 +0100,Miguel Seca,miguel.seca@gmail.com,driver component update
+1002171,2022-09-05 16:23:40 +0100,Diogo Mendes,diogomendes@upskill.pt,Code Review
+b1e6ecf,2022-09-05 14:24:37 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+6fa223a,2022-09-05 14:23:40 +0100,Miguel Seca,miguel.seca@gmail.com,folder restructuring
+b03cfcc,2022-09-05 14:21:07 +0100,Diogo Mendes,diogomendes@upskill.pt,Code Review + css
+30eee9e,2022-09-05 12:39:47 +0100,Miguel Seca,miguel.seca@gmail.com,today's trips added
+7428ac1,2022-09-05 12:39:26 +0100,Miguel Seca,miguel.seca@gmail.com,driver model updated
+a2b7f3f,2022-09-05 10:43:05 +0100,Miguel Seca,miguel.seca@gmail.com,new components added
+faab578,2022-09-05 10:42:45 +0100,Miguel Seca,miguel.seca@gmail.com,added "create new driver" button
+a8d9f8c,2022-09-05 10:42:17 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+bc039dc,2022-09-05 10:41:51 +0100,Miguel Seca,miguel.seca@gmail.com,driver model updated
+f5e8cb4,2022-09-04 12:37:47 +0100,Miguel Seca,miguel.seca@gmail.com,new components added
+2a3a0d8,2022-09-02 16:41:53 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+933b2d7,2022-09-02 16:38:02 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+92ef7a3,2022-09-02 15:08:03 +0100,Miguel Seca,miguel.seca@gmail.com,routes unprotected (for debugging)
+c2425ee,2022-09-02 15:04:54 +0100,Miguel Seca,miguel.seca@gmail.com,merge resolved
+a8a3088,2022-09-02 15:03:02 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+cfe4931,2022-09-02 14:59:25 +0100,Diogo Mendes,diogomendes@upskill.pt,css updated
+0501f53,2022-09-02 14:49:26 +0100,Miguel Seca,miguel.seca@gmail.com,refactoring login method
+97eba28,2022-09-02 14:49:07 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+2adb9ba,2022-09-02 14:48:55 +0100,Miguel Seca,miguel.seca@gmail.com,cosmetic changes
+abf5d4c,2022-09-02 14:48:40 +0100,Miguel Seca,miguel.seca@gmail.com,total cost an total trips now appear on dashboard
+82d6523,2022-09-02 14:48:09 +0100,Miguel Seca,miguel.seca@gmail.com,auth guard implemented
+dc75c6d,2022-09-02 14:47:53 +0100,Miguel Seca,miguel.seca@gmail.com,folder organization
+1b06437,2022-09-02 14:47:28 +0100,Miguel Seca,miguel.seca@gmail.com,log out button implemented
+4ed2a1e,2022-09-02 13:43:41 +0100,Diogo Mendes,diogomendes@upskill.pt,css review
+457af4d,2022-09-02 13:19:42 +0100,Miguel Seca,miguel.seca@gmail.com,routing updated
+49169e5,2022-09-02 11:54:40 +0100,Diogo Mendes,diogomendes@upskill.pt,css navbar
+a179724,2022-09-02 11:45:30 +0100,Diogo Mendes,diogomendes@upskill.pt,Chart added on Dashboard
+2f4a2b0,2022-09-02 11:22:51 +0100,Miguel Seca,miguel.seca@gmail.com,driver component now presents table
+20c279c,2022-09-02 11:22:39 +0100,Miguel Seca,miguel.seca@gmail.com,client component now presents table
+0feba02,2022-09-02 11:22:11 +0100,Miguel Seca,miguel.seca@gmail.com,interceptor implemented
+2d27520,2022-09-02 11:21:50 +0100,Miguel Seca,miguel.seca@gmail.com,confirm component added
+a510f97,2022-09-02 11:21:39 +0100,Miguel Seca,miguel.seca@gmail.com,confirm component added
+6923ef0,2022-09-02 11:21:20 +0100,Miguel Seca,miguel.seca@gmail.com,code cleanup
+d8407da,2022-09-02 11:21:04 +0100,Miguel Seca,miguel.seca@gmail.com,styling
+73d504b,2022-09-02 11:19:40 +0100,Miguel Seca,miguel.seca@gmail.com,styliing
+dc9bd31,2022-09-01 16:19:36 +0100,Diogo Mendes,diogomendes@upskill.pt,Html css changed
+fc12060,2022-09-01 16:12:39 +0100,Diogo Mendes,diogomendes@upskill.pt,code review
+70ba519,2022-09-01 15:51:38 +0100,Miguel Seca,miguel.seca@gmail.com,navbar links updated
+494cb38,2022-09-01 15:50:18 +0100,Diogo Mendes,diogomendes@upskill.pt,css dashboard
+e6537f7,2022-09-01 15:50:01 +0100,Diogo Mendes,diogomendes@upskill.pt,div dashboard added
+7cc90f6,2022-09-01 15:49:25 +0100,Miguel Seca,miguel.seca@gmail.com,URL's updated
+c6f33a1,2022-09-01 15:48:48 +0100,Miguel Seca,miguel.seca@gmail.com,clients component table implemented
+e34e2f8,2022-09-01 15:48:20 +0100,Miguel Seca,miguel.seca@gmail.com,routing update
+1e4648b,2022-09-01 14:46:51 +0100,Miguel Seca,miguel.seca@gmail.com,updated
+a24c98b,2022-09-01 14:46:42 +0100,Miguel Seca,miguel.seca@gmail.com,updated
+4c9034d,2022-09-01 14:46:37 +0100,Miguel Seca,miguel.seca@gmail.com,updated
+1a7b0f7,2022-09-01 14:46:33 +0100,Miguel Seca,miguel.seca@gmail.com,updated
+4757211,2022-09-01 14:46:17 +0100,Miguel Seca,miguel.seca@gmail.com,trip service created
+0ddad6a,2022-09-01 13:40:20 +0100,Miguel Seca,miguel.seca@gmail.com,login service implemented
+62d73e0,2022-09-01 13:40:00 +0100,Miguel Seca,miguel.seca@gmail.com,new modules added
+ba869cb,2022-09-01 10:32:28 +0100,Diogo Mendes,diogomendes@upskill.pt,login implementation (in progress)
+c3948ae,2022-09-01 10:14:29 +0100,Diogo Mendes,diogomendes@upskill.pt,New Components added ( driver, clients and issues)
+5e0bc87,2022-09-01 09:56:56 +0100,Diogo Mendes,diogomendes@upskill.pt,Created user model
+0c199c3,2022-09-01 09:56:41 +0100,Diogo Mendes,diogomendes@upskill.pt,Service content (initial commit)
+7f794c8,2022-08-31 17:13:24 +0100,Diogo Mendes,diogomendes@upskill.pt,Folder reordering
+9035e8a,2022-08-31 17:11:39 +0100,Diogo Mendes,diogomendes@upskill.pt,Service created
+258e63e,2022-08-31 17:10:18 +0100,Diogo Mendes,diogomendes@upskill.pt,Model created
+dd38d9e,2022-08-31 14:50:19 +0100,Diogo Mendes,diogomendes@upskill.pt,Innitial Commit
+b73bf3f,2022-08-31 09:55:59 +0100,Miguel Seca,82337887+miguelseca@users.noreply.github.com,Initial commit

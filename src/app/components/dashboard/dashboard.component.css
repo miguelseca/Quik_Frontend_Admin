@@ -84,7 +84,7 @@
 }
 
 .item6 {
-  /* border: 2px solid red; */
+  grid-column: 2 / span 2;
 }
 
 
