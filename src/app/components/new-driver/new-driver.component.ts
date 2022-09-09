@@ -71,7 +71,7 @@ export class NewDriverComponent implements OnInit {
       console.log('1: ' + JSON.stringify(umDriver));
 
       this.driverService.createDriver(umDriver).subscribe((data) => {
-        this.dialogRef.close(this.driver);
+        this.dialogRef.close(umDriver);
       });
     }
   }

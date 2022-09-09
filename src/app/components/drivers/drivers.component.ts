@@ -74,11 +74,13 @@ export class DriversComponent implements OnInit {
 
     const umDialog = this.matDialog.open(NewDriverComponent);
     umDialog.afterClosed().subscribe((result) => {
+      console.log(result);
+      
       if (result) {
-        this.logSnacks('Driver adicionado.', 2000);
+        this.logSnacks(`driver adicionado.`, 2000);
         this.getDrivers();
       } else {
-        this.logSnacks(`atualização cancelada.`, 2000);
+        this.logSnacks(`cancelado.`, 2000);
       }
     });
   }
