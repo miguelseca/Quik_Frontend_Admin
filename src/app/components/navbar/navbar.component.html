@@ -1,0 +1,38 @@
+<div id="navbar">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="dashboard" class="navbar-brand">QUIK - Administration Panel</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="home" class="nav-link" routerLink="../dashboard">Home </a>
+      </li>
+      <li class="nav-item">
+        <a href="clients" class="nav-link" routerLink="../clients">Clients</a>
+      </li>
+      <li class="nav-item">
+        <a href="drivers" class="nav-link" routerLink="../drivers">Drivers</a>
+      </li>
+      <li class="nav-item">
+        <a href="issues" class="nav-link" routerLink="#">Issues</a>
+      </li>
+      <li class="nav-item">
+        <a href="trips" class="nav-link" routerLink="#">Trips</a>
+      </li>
+      <li class="nav-item">
+        <a href="maps" class="nav-link" routerLink="../maps">Maps</a>
+      </li>
+      <!-- <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/clients" class="nav-link" routerLink="clients">Clients</a>
+        </li> -->
+    </ul>
+
+    <!-- <ul class="navbar-nav mr-auto" *ngIf="isLoggedIn">
+       
+      </ul> -->
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut {{ username }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
