@@ -3,6 +3,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
 import { CONFIG } from 'src/assets/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Driver from '../models/driver';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ import Driver from '../models/driver';
 export class DriversService {
   private DRIVERS_URL = CONFIG.DRIVERS_URL;
 
-  private token: string = localStorage.getItem('token')!.slice(1, -1);
+  // private token: string = localStorage.getItem('token')!.slice(1, -1);
+  private token: string = this.tokenStorage.getToken()!.slice(1,-1);
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -19,7 +21,8 @@ export class DriversService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private tokenStorage : TokenStorageService) {}
 
   getDrivers(): Observable<Driver[]> {
     return this.http.get<Driver[]>(this.DRIVERS_URL, this.httpOptions).pipe(
@@ -46,10 +49,10 @@ export class DriversService {
 
   deleteDriver(driver: Driver): Observable<any> {
     return this.http
-      .delete<Driver>(this.DRIVERS_URL + driver.nif, this.httpOptions)
+      .delete<Driver>(`${this.DRIVERS_URL}/${driver.nif}`, this.httpOptions)
       .pipe(
         tap(() => this.log(`driver deleted`)),
-        catchError(this.handleError<any>('deletDriver'))
+        catchError(this.handleError<any>('deleteDriver'))
       );
   }
 

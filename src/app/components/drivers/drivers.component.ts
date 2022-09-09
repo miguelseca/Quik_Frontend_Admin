@@ -71,7 +71,16 @@ export class DriversComponent implements OnInit {
   }
 
   createDriver() {
-    this.matDialog.open(NewDriverComponent);
+
+    const umDialog = this.matDialog.open(NewDriverComponent);
+    umDialog.afterClosed().subscribe((result) => {
+      if (result) {
+        this.logSnacks('Driver adicionado.', 2000);
+        this.getDrivers();
+      } else {
+        this.logSnacks(`atualização cancelada.`, 2000);
+      }
+    });
   }
 
   onChange(event: MatCheckboxChange): void {
@@ -134,11 +143,11 @@ export class DriversComponent implements OnInit {
 
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
-        this.drivers = this.drivers.filter((item) => item !== driver);
-        this.logSnacks(`${driver.email} was deleted.`, 2000);
-        this.getDrivers();
+        // this.drivers = this.drivers.filter((item) => item !== driver);
         this.driversService.deleteDriver(driver).subscribe((data) => {
+          this.logSnacks(`${driver.email} was deleted.`, 2000);
           this.router.navigateByUrl('/drivers');
+          this.getDrivers();
         });
       }
     });

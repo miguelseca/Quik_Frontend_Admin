@@ -1,18 +1,15 @@
 table {
   width: 100%;
   background-color: lightgrey;
-
 }
 
-.book-container {
+.clients-container {
   background-color: lightsteelblue;
   padding: 20px 30px 30px 50px;
 }
 
 .operations-button {
-
   background-color: lightgrey;
-
   border: none;
   border-radius: 4px;
   cursor: pointer;

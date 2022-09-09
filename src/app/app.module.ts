@@ -52,6 +52,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DialogModule } from '@angular/cdk/dialog';
 import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 //*================= COMPONENTS ==================================================
@@ -63,11 +64,15 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { Interceptor } from './interceptors/interceptor';
+import { Interceptor } from './_helpers/interceptor';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { NewDriverComponent } from './components/new-driver/new-driver.component';
 import { EditDriverComponent } from './components/edit-driver/edit-driver.component';
 
+import { LoginAdminComponent } from './components/login/login.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MapsComponent } from './components/maps/maps.component';
 
 //*===============================================================================
 
@@ -82,7 +87,9 @@ import { EditDriverComponent } from './components/edit-driver/edit-driver.compon
     ConfirmComponent,
     NewDriverComponent,
     EditDriverComponent,
- 
+    LoginAdminComponent,
+    NavbarComponent,
+    MapsComponent,
   ],
   imports: [
     BrowserModule,
@@ -153,10 +160,12 @@ import { EditDriverComponent } from './components/edit-driver/edit-driver.compon
     MatInputModule,
     NgxChartsModule,
     FormsModule,
+    GoogleMapsModule,
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+    authInterceptorProviders
   ],
 })
 export class AppModule {}

@@ -1,5 +1,5 @@
+<app-navbar></app-navbar>
 <div class="dashboard">
-
     <div class="grid-container">
         <div class="grid-item item1">Trips today</div>
         <div class="grid-item item2"><mat-card class="demo-inline-calendar-card">
@@ -9,7 +9,6 @@
           <div class="grid-item item4">Total Revenue: {{total_cost}} € </div>
         <div class="grid-item item5">Tasks</div>
         <div class="grid-item item6">
-
             <ngx-charts-advanced-pie-chart class="ChartPie"
                 [view]="view"
                 scheme="vivid"
@@ -20,7 +19,6 @@
                 (deactivate)="onDeactivate($event)">
             </ngx-charts-advanced-pie-chart>
         </div>
-
     </div>
-
+    <router-outlet></router-outlet>
 </div>

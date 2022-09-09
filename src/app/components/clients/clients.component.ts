@@ -90,6 +90,7 @@ export class ClientsComponent implements OnInit {
         this.logSnacks(`${client.email} banned.`, 2000);
         this.clientService.banClient(client).subscribe((data) => {
           this.router.navigateByUrl('/clients');
+          this.getClients();
         });
       }
     });
