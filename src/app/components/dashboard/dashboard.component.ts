@@ -17,8 +17,11 @@ export class DashboardComponent {
   total_trips: number = 0;
   total_cost: number = 0;
   trips_today: number = 0;
-
-
+  quick: number = 0;
+  quickgreen: number = 0;
+  quickxl: number = 0;
+  quickassist: number = 0;
+  quickconfort: number = 0;
   view: [number, number] = [600, 200];
 
   // options
@@ -28,38 +31,22 @@ export class DashboardComponent {
   isDoughnut: boolean = false;
 
   single = [
-    {
-      name: 'Quik',
-      value: 9,
-    },
-    {
-      name: 'Quik Green',
-      value: 2,
-    },
-    {
-      name: 'Quik Confort',
-      value: 10,
-    },
-    {
-      name: 'Quik XL',
-      value: 6,
-    },
-    {
-      name: 'Quik Deluxe',
-      value: 6,
-    },
-
+    { name: 'Quik', value: this.quick },
+    { name: 'QuikGreen', value: this.quickgreen },
+    { name: 'QuikConfort', value: this.quickconfort },
+    {name: 'QuikXL',value: this.quickxl},
+    { name: 'QuikAssist', value: this.quickassist},
   ];
 
   constructor(
     private tripService: TripsService,
     private clientService: ClientsService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.getAllTrips();
+    this.getAllTrips(); 
   }
-
+  
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
@@ -72,18 +59,45 @@ export class DashboardComponent {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
+
+
   getAllTrips(): void {
     this.tripService.getAllTrips().subscribe((t) => {
+      console.log(t);
+
       this.trips = t;
       this.total_trips = this.trips.length;
       for (let i = 0; i < this.trips.length; i++) {
         this.total_cost += this.trips[i].cost;
+        switch (this.trips[i].carClass) {
+          case "Quik":
+            this.quick += 1;
+            break;
+          case "QuikGreen":
+            this.quickgreen += 1;  
+            break;
+            case "QuikConfort":
+            this.quickconfort += 1;  
+            break;
+            case "QuikXL":
+            this.quickxl += 1;  
+            break;
+            case "QuikAssist":
+            this.quickassist += 1;  
+            break;
+          default: ""
+            break;
+        }
       }
-
+      this.single = [
+        { name: 'Quik', value: this.quick }, 
+        { name: 'QuikGreen', value: this.quickgreen },
+        { name: 'QuikConfort', value: this.quickconfort },
+        { name: 'QuikXL', value: this.quickxl },
+        { name: 'QuikAssist', value: this.quickassist },
+      ]  
+      
     });
   }
 
-  getAllClients(): void {
-    this.clientService.getAllClients().subscribe((c) => (this.clients = c));
-  }
 }
