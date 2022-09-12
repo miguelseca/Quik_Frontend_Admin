@@ -1,12 +1,9 @@
-<mat-dialog-content>
-  <p>
-    {{data.message}}
-    <!-- {{data.entity}}? -->
-
-  </p>
-</mat-dialog-content>
-
-<mat-dialog-actions align="center">
-  <button mat-raised-button color="primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
-  <button mat-raised-button mat-dialog-close tabindex="-1" (click)="onCancelClick()">{{cancelButtonText}}</button>
-</mat-dialog-actions>
+<div id="confirm">
+  <mat-dialog-content>
+    <p>{{data.message}}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button class="dark-btn-confirm" (click)="onConfirmClick()" >{{confirmButtonText}}</button>
+    <button mat-raised-button mat-dialog-close class="dark-btn-confirm" (click)="onCancelClick()">{{cancelButtonText}}</button>
+  </mat-dialog-actions>
+</div>
