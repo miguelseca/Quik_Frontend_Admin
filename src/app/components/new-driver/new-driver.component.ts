@@ -1,13 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  MinLengthValidator,
-  MinValidator,
-  Validators,
-} from '@angular/forms';
-import { Router } from '@angular/router';
-import Driver, { Service } from '../../models/driver';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Driver, { Service } from 'src/app/models/driver';
 import { DriversService } from '../../services/drivers.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
