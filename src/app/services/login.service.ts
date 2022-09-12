@@ -32,6 +32,7 @@ export class LoginService {
       return of(result as T);
     };
   }
+  
   private log(message: string) {
     console.log(`Login Service: ${message}`);
   }
