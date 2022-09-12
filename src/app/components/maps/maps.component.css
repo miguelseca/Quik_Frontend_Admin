@@ -1,0 +1,17 @@
+/* #maps-container {
+    width: 100vw;
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+#over_map {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 99;
+    padding: 20px;
+    height: 75vh;
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.85);
+
+} */

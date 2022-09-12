@@ -1,6 +1,7 @@
-import { Loader } from "@googlemaps/js-api-loader"
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
+import Driver from 'src/app/models/driver';
+import { DriversService } from 'src/app/services/drivers.service';
 
 @Component({
   selector: 'app-maps',
@@ -10,19 +11,26 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 export class MapsComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow;
-
+  display : any;
   zoom = 12;
   center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
-    zoomControl: false,
+    zoomControl: true,
     scrollwheel: false,
     disableDoubleClickZoom: true,
     mapTypeId: 'hybrid',
     maxZoom: 15,
     minZoom: 8,
+    disableDefaultUI: true,
   };
   markers = [];
   infoContent = '';
+  drivers: Driver[] = [];
+
+
+  constructor(
+    private driverService: DriversService
+  ) {}
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -31,40 +39,39 @@ export class MapsComponent implements OnInit {
         lng: position.coords.longitude,
       };
     });
+    this.getalldrivers();
   }
 
-  zoomIn() {
-    if (this.zoom < this.options.maxZoom) this.zoom++;
+  getalldrivers() {
+    this.driverService.getDrivers().subscribe((data) => {
+      this.drivers = data;
+      this.drivers.forEach(item => {
+        this.markers.push(new google.maps.Marker({
+          position: {
+            lat: item.currentLocation[0],
+            lng: item.currentLocation[1]
+          },
+          draggable: false,
+          label: item.firstName
+        }));
+      });
+
+    });
+
+  }
+  
+  moveMap(event: google.maps.MapMouseEvent) {
+    if(event.latLng!= null)
+    this.center = (event.latLng.toJSON());
   }
 
-  zoomOut() {
-    if (this.zoom > this.options.minZoom) this.zoom--;
+  move(event: google.maps.MapMouseEvent) {
+    if(event.latLng != null)
+    this.display = event.latLng.toJSON();
   }
-
-  // click(event: google.maps.MouseEvent) {
-  //   console.log(event);
-  // }
 
   logCenter() {
     console.log(JSON.stringify(this.map.getCenter()));
-  }
-
-  addMarker() {
-    this.markers.push({
-      position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-      },
-      label: {
-        color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      options: {
-        animation: google.maps.Animation.BOUNCE,
-      },
-    });
   }
 
   openInfo(marker: MapMarker, content) {
