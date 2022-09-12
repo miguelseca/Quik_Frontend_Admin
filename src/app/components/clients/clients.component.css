@@ -1,30 +1,41 @@
-table {
-  width: 100%;
-  background-color: lightgrey;
-}
-
+/* 
+with fixed navbar must change padding: 20px to 80px
+*/
 .clients-container {
-  background-color: lightsteelblue;
-  padding: 20px 30px 30px 50px;
+  background-color: lightgrey;
+  padding: 40px 40px 40px 40px;
+  height: 100vh;
 }
 
-.operations-button {
-  background-color: lightgrey;
-  border: none;
-  border-radius: 4px;
+.ban:hover {
   cursor: pointer;
-  color: rgb(206, 18, 18);
-  font-size: 0.8rem;
-  padding: 0.4rem;
-  margin-right: 0.4rem;
-  margin-bottom: 0.4rem;
-  margin-top: 0.4rem;
-}
-.operations-button:hover {
-  background-color: black;
-  color: white;
+  color: #c20000;
+} 
+
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1) {
+  flex: 0 0 80px;
 }
 
-#paginator{
-  background-color: lightgrey;
+.mat-cell:nth-child(3),
+.mat-header-cell:nth-child(3) {
+  flex: 0 0 100px;
 }
+
+.mat-cell:nth-child(8),
+.mat-header-cell:nth-child(8) {
+  flex: 0 0 60px;
+}
+/* Row hover bakground */
+.mat-row:hover .mat-cell{
+  background-color: #f0f0f0;
+}
+
+.green-icon {
+  color: rgb(0, 150, 0);
+}
+
+.red-icon {
+  color: #f44336;
+}
+
