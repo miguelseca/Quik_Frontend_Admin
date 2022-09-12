@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DriversService } from './services/drivers.service';
+import { DriversService } from '../services/drivers.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DriversService', () => {
   let service: DriversService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
     service = TestBed.inject(DriversService);
   });
 

@@ -57,14 +57,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
 //*================= COMPONENTS ==================================================
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { Interceptor } from './_helpers/interceptor';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { NewDriverComponent } from './components/new-driver/new-driver.component';
 import { EditDriverComponent } from './components/edit-driver/edit-driver.component';
@@ -79,7 +77,6 @@ import { MapsComponent } from './components/maps/maps.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent,
     DashboardComponent,
     DriversComponent,
     IssuesComponent,
@@ -163,9 +160,6 @@ import { MapsComponent } from './components/maps/maps.component';
     GoogleMapsModule,
   ],
   bootstrap: [AppComponent],
-  providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
-    authInterceptorProviders
-  ],
+  providers: [authInterceptorProviders],
 })
 export class AppModule {}

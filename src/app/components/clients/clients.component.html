@@ -1,77 +1,61 @@
 <app-navbar></app-navbar>
 <div class="clients-container">
   <h1><strong>Clients List</strong></h1>
-  <button mat-button [matMenuTriggerFor]="menu">Options</button>
-
-  <mat-menu #menu="matMenu" [formGroup]="toppings">
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="email">email</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="phone">phone</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="firstName">firstName</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="lastName">lastName</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="paymentMethod">paymentMethod</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="emailVerified">emailVerified</mat-checkbox>
-    </p>
-    <p>
-      <mat-checkbox (change)="onChange($event)" formControlName="isBanned">isBanned</mat-checkbox>
-    </p>
-
-  </mat-menu>
-
-  <table mat-table [dataSource]="clients" class="mat-elevation-z8">
-
+  <mat-form-field appearance="standard">
+    <mat-label>Search filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="search..." #input>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
     <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>email</th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef>phone</th>
-      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef>firstName</th>
-      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef>lastName</th>
-      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="paymentMethod">
-      <th mat-header-cell *matHeaderCellDef>paymentMethod</th>
-      <td mat-cell *matCellDef="let element"> {{element.paymentMethod}} </td>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>email</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="emailVerified">
-      <th mat-header-cell *matHeaderCellDef>emailVerified</th>
-      <td mat-cell *matCellDef="let element"> {{element.status.emailVerified}} </td>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Verified </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-icon class="green-icon" *ngIf="element?.status.emailVerified === true">verified_user</mat-icon>
+        <mat-icon class="red-icon" *ngIf="element?.status.emailVerified === false">verified_user</mat-icon> 
+        <!-- matTooltipPosition="right"  -->
+      </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>phone</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>firstName</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>lastName</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="paymentMethod">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>paymentMethod</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.paymentMethod}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="isBanned">
-      <th mat-header-cell *matHeaderCellDef>isBanned</th>
-      <td mat-cell *matCellDef="let element"> {{element.status.isBanned}} </td>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>isBanned</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span *ngIf="element?.status.isBanned === false" class="badge badge-success">Active</span>
+        <span *ngIf="element?.status.isBanned === true" class="badge badge-danger">Banned</span>
+      </mat-cell>
     </ng-container>
 
    <ng-container matColumnDef="ban">
-      <th mat-header-cell *matHeaderCellDef> </th>
-      <td mat-cell *matCellDef="let element"><button mat-button (click)="onBanClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></td>
+      <mat-header-cell *matHeaderCellDef>Ban</mat-header-cell>
+      <mat-cell *matCellDef="let element"><a class="ban" (click)="onBanClick(element)"><mat-icon>cancel</mat-icon></a></mat-cell>
+      <!-- <mat-cell *matCellDef="let element"><button mat-button (click)="onBanClick(element)" class="operations-button"><mat-icon>delete</mat-icon></button></mat-cell> -->
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator id="paginator" #page [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator id="paginator" class="mat-elevation-z2" #page [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>

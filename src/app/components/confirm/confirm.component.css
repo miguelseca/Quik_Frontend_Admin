@@ -1,0 +1,19 @@
+#confirm {
+    display: flex;
+    height: 100px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #eaeaea;
+    border: 1px dotted #333; */
+  }
+
+  .dark-btn-confirm {
+    background-color: #343a40; 
+    color:rgba(255,255,255,.5);
+  }
+
+  .dark-btn-confirm:hover {
+    background-color: black;
+    color:rgba(255,255,255,.75);
+  }

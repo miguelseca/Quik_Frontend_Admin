@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import Client from 'src/app/models/client';
 import { ClientsService } from 'src/app/services/clients.service';
 import { ConfirmComponent } from '../confirm/confirm.component';
+import { MatPaginator } from '@angular/material/paginator';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -14,59 +15,34 @@ import { ConfirmComponent } from '../confirm/confirm.component';
   styleUrls: ['./clients.component.css'],
 })
 export class ClientsComponent implements OnInit {
+  title = 'Clients';
   clients: Client[] = [];
-  displayedColumns: string[] = [];
+  displayedColumns = [
+    'emailVerified', 'email', 'isBanned', 'phone', 'firstName', 'lastName',
+    'paymentMethod', 'ban', 
+  ];
+  dataSource!: MatTableDataSource<Client>;
 
-  toppings = this._formBuilder.group({
-    email: true,
-    phone: true,
-    firstName: true,
-    lastName: true,
-    paymentMethod: true,
-    emailVerified: true,
-    isBanned: true,
-  });
+  @ViewChild('page') paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private clientService: ClientsService,
-    private _formBuilder: FormBuilder,
-    private router: Router,
+    // private router: Router,
     private matDialog: MatDialog,
     public snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getClients();
-
-    this.displayedColumns = [
-      'email',
-      'phone',
-      'firstName',
-      'lastName',
-      'paymentMethod',
-      'emailVerified',
-      'isBanned',
-      'ban',
-    ];
-  }
-
-  onChange(event: MatCheckboxChange): void {
-    this.displayedColumns = [];
-    if (this.toppings.value.email) this.displayedColumns.push('email');
-    if (this.toppings.value.phone) this.displayedColumns.push('phone');
-    if (this.toppings.value.firstName) this.displayedColumns.push('firstName');
-    if (this.toppings.value.lastName) this.displayedColumns.push('lastName');
-    if (this.toppings.value.paymentMethod)
-      this.displayedColumns.push('paymentMethod');
-    if (this.toppings.value.emailVerified)
-      this.displayedColumns.push('emailVerified');
-    if (this.toppings.value.isBanned) this.displayedColumns.push('isBanned');
-    if (!this.displayedColumns.includes('ban'))
-      this.displayedColumns.push('ban');
   }
 
   getClients(): void {
-    this.clientService.getAllClients().subscribe((c) => (this.clients = c));
+    this.clientService.getAllClients().subscribe((c) => {
+      this.dataSource = new MatTableDataSource(this.clients = c);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   onBanClick(client: Client): void {
@@ -74,8 +50,8 @@ export class ClientsComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-    dialogConfig.height = '50%';
-    dialogConfig.width = '50%';
+    // dialogConfig.height = '50%';
+    dialogConfig.width = '400px';
     dialogConfig.data = {
       entity: client.email,
       message: `Do you really want to ban ${client.email}?`,
@@ -85,15 +61,22 @@ export class ClientsComponent implements OnInit {
 
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
-        //remove banned client from list or not?
-        //this.cargas = this.cargas.filter((item) => item !== carga);
-        this.logSnacks(`${client.email} banned.`, 2000);
+        this.logSnacks(`${client.email} banned.`, 3000);
         this.clientService.banClient(client).subscribe((data) => {
-          this.router.navigateByUrl('/clients');
+          // this.router.navigateByUrl('/clients');
           this.getClients();
         });
       }
     });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   logSnacks(message: string, time: number): void {
