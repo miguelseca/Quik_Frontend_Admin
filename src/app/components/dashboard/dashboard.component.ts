@@ -10,7 +10,7 @@ import Trip from '../../models/trip';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  title = 'Quik';
+  title = 'Quik Dashboard';
   selected: Date | null | undefined;
   clients: Client[] = [];
   trips: Trip[] = [];
@@ -23,6 +23,7 @@ export class DashboardComponent {
   quickassist: number = 0;
   quickconfort: number = 0;
   view: [number, number] = [600, 200];
+  single = [];
 
   // options
   gradient: boolean = true;
@@ -30,23 +31,15 @@ export class DashboardComponent {
   showLabels: boolean = true;
   isDoughnut: boolean = false;
 
-  single = [
-    { name: 'Quik', value: this.quick },
-    { name: 'QuikGreen', value: this.quickgreen },
-    { name: 'QuikConfort', value: this.quickconfort },
-    {name: 'QuikXL',value: this.quickxl},
-    { name: 'QuikAssist', value: this.quickassist},
-  ];
-
   constructor(
     private tripService: TripsService,
     private clientService: ClientsService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.getAllTrips(); 
+    this.getAllTrips();
   }
-  
+
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
@@ -59,8 +52,6 @@ export class DashboardComponent {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
-
-
   getAllTrips(): void {
     this.tripService.getAllTrips().subscribe((t) => {
       console.log(t);
@@ -70,34 +61,33 @@ export class DashboardComponent {
       for (let i = 0; i < this.trips.length; i++) {
         this.total_cost += this.trips[i].cost;
         switch (this.trips[i].carClass) {
-          case "Quik":
+          case 'Quik':
             this.quick += 1;
             break;
-          case "QuikGreen":
-            this.quickgreen += 1;  
+          case 'QuikGreen':
+            this.quickgreen += 1;
             break;
-            case "QuikConfort":
-            this.quickconfort += 1;  
+          case 'QuikConfort':
+            this.quickconfort += 1;
             break;
-            case "QuikXL":
-            this.quickxl += 1;  
+          case 'QuikXL':
+            this.quickxl += 1;
             break;
-            case "QuikAssist":
-            this.quickassist += 1;  
+          case 'QuikAssist':
+            this.quickassist += 1;
             break;
-          default: ""
+          default:
+            '';
             break;
         }
       }
       this.single = [
-        { name: 'Quik', value: this.quick }, 
+        { name: 'Quik', value: this.quick },
         { name: 'QuikGreen', value: this.quickgreen },
         { name: 'QuikConfort', value: this.quickconfort },
         { name: 'QuikXL', value: this.quickxl },
         { name: 'QuikAssist', value: this.quickassist },
-      ]  
-      
+      ];
     });
   }
-
 }
