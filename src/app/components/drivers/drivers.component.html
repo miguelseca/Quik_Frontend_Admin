@@ -65,7 +65,7 @@
 
       <ng-container matColumnDef="edit">
         <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
-          <mat-cell *matCellDef="let element"><a class="edit" (click)="onEditClick(element.email)"><mat-icon>edit</mat-icon></a></mat-cell>
+          <mat-cell *matCellDef="let element"><a class="edit" (click)="onEditClick(element)"><mat-icon>edit</mat-icon></a></mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="delete">

@@ -4,7 +4,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
 import { ConfirmComponent } from '../confirm/confirm.component';
@@ -18,7 +17,6 @@ import { NewDriverComponent } from '../new-driver/new-driver.component';
 })
 export class DriversComponent implements OnInit {
   drivers: Driver[] = [];
-
   displayedColumns = [
     'nif', 'firstName', 'lastName', 'phone', 'email',
     'code', 'carBrand', 'carModel', 'licensePlate', 'shift',
@@ -31,7 +29,6 @@ export class DriversComponent implements OnInit {
 
   constructor(
     private driversService: DriversService,
-    // private router: Router,
     private matDialog: MatDialog,
     public snackBar: MatSnackBar
   ) {}
@@ -41,7 +38,6 @@ export class DriversComponent implements OnInit {
   }
 
   createDriver() {
-
     const umDialog = this.matDialog.open(NewDriverComponent);
     umDialog.afterClosed().subscribe((result) => {
       console.log(result);
