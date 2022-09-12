@@ -1,125 +1,80 @@
 <app-navbar></app-navbar>
-<div class="fundo">
-
-  <div class="book-container">
-    <h1><strong>Drivers List</strong></h1>
-    <button mat-button [matMenuTriggerFor]="menu">Options</button>
-
-    <mat-menu #menu="matMenu" [formGroup]="toppings">
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="nif">nif</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="firstName">firstName</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="lastName">lastName</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="phone">phone</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="email">email</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="code">code</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="carBrand">carBrand</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="carModel">carModel</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="licensePlate">licensePlate</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="shift">shift</mat-checkbox>
-      </p>
-      <p>
-        <mat-checkbox (change)="onChange($event)" formControlName="lastTrip">lastTrip</mat-checkbox>
-      </p>
-
-    </mat-menu>
-
-    <a mat-button (click)="createDriver()">Create New Driver</a>
-
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-
+<div class="drivers-container">
+  <h1><strong>Drivers List</strong></h1>
+    <button mat-raised-button type="button" class="dark-btn-add-river f-r" (click)="createDriver()">Create New Driver</button>
+    <mat-form-field appearance="standard">
+      <mat-label>Search filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="search..." #input>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z2" matSort>
       <ng-container matColumnDef="nif">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nif</th>
-        <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nif</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nif}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="firstName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</th>
-        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lastName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
-        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>LastName</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="phone">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
-        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>>
       </ng-container>
 
       <ng-container matColumnDef="code">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
-        <td mat-cell *matCellDef="let element"> {{element.service.code}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.code}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="carBrand">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>CarBrand</th>
-        <td mat-cell *matCellDef="let element"> {{element.service.carBrand}} </td>
+      <ng-container matColumnDef="carBrand">  
+        <mat-header-cell *matHeaderCellDef mat-sort-header>CarBrand</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.carBrand}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="carModel">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>CarModel</th>
-        <td mat-cell *matCellDef="let element"> {{element.service.carModel}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>CarModel</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.carModel}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="licensePlate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>LicensePlate</th>
-        <td mat-cell *matCellDef="let element"> {{element.service.licensePlate}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>LicensePlate</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.licensePlate}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="shift">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Shift</th>
-        <td mat-cell *matCellDef="let element"> {{element.shift}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Shift</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.shift}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lastTrip">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>LastTrip</th>
-        <td mat-cell *matCellDef="let element"> {{element.lastTrip}} </td>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>LastTrip</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastTrip}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let element"><button mat-button (click)="onEditClick(element)"class="operations-button">
-            <mat-icon>edit</mat-icon>
-          </button></td>
+        <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+          <mat-cell *matCellDef="let element"><a class="edit" (click)="onEditClick(element.email)"><mat-icon>edit</mat-icon></a></mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let element"><button mat-button (click)="onDeleteClick(element)"
-            class="operations-button">
-            <mat-icon>delete</mat-icon>
-          </button></td>
+        <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+          <mat-cell *matCellDef="let element"><a class="delete" (click)="onDeleteClick(element)"><mat-icon>delete</mat-icon></a></mat-cell>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-    <mat-paginator id="paginator" #page [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator id="paginator" class="mat-elevation-z2" #page [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
   </div>
-</div>
