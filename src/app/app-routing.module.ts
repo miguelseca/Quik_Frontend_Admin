@@ -5,7 +5,6 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { IssuesComponent } from './components/issues/issues.component';
-// import { LoginPageComponent } from './components/login-page/login-page.component';
 import { EditDriverComponent } from './components/edit-driver/edit-driver.component';
 import { NewDriverComponent } from './components/new-driver/new-driver.component';
 import { AuthGuardService } from './services/auth-guard.service';
