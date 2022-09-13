@@ -49,21 +49,20 @@ export class IssuesComponent implements OnInit {
     // dialogConfig.height = '50%';
     dialogConfig.width = '400px';
     dialogConfig.data = {
-      entity: issue.email,
-      message: `Do you really want to close ${issue.email}?`,
+      entity: issue,
+      message: `Do you really want to close ${issue.description}?`,
     };
 
     const umDialog = this.matDialog.open(ConfirmComponent, dialogConfig);
 
-    // umDialog.afterClosed().subscribe((result) => {
-    //   if (result) {
-    //     this.logSnacks(`${issue.email} banned.`, 3000);
-    //     this.clientService.banClient(client).subscribe((data) => {
-    //       // this.router.navigateByUrl('/clients');
-    //       this.getClients();
-    //     });
-    //   }
-    // });
+    umDialog.afterClosed().subscribe((result) => {
+      if (result) {
+        this.logSnacks(`Issue from ${issue.email} closed.`, 3000);
+        this.issueService.updateIssue(issue).subscribe(() => {
+          this.getAllIssues();
+        });
+      }
+    });
   }
 
   applyFilter(event: Event) {
