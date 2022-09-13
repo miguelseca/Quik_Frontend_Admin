@@ -22,11 +22,13 @@
   padding: 20px;
   font-size: 1rem;
   border-radius: 6px;
+  height: fit-content;
 }
 
 .item2 {
   grid-column: 3;
   grid-row: 1;
+  
 }
 
 .item5 {

@@ -1,13 +1,25 @@
 <app-navbar></app-navbar>
 <div class="dashboard">
     <div class="grid-container">
-        <div class="grid-item item1">Trips today</div>
+        <div class="grid-item item1">
+            Trips today: <br>
+            Avg Time: <br>
+            Last Week:
+        </div>
         <div class="grid-item item2">
             <mat-card class="demo-inline-calendar-card">
                 <mat-calendar [(selected)]="selected"></mat-calendar>
             </mat-card></div>
-        <div class="grid-item item3">Total Trips: {{total_trips}}</div>
-        <div class="grid-item item4">Total Revenue: {{total_cost}} € </div>
+        <div class="grid-item item3">
+            Total Trips: {{total_trips}} <br>
+            Total User: <br>
+            Registration Today:
+        </div>
+        <div class="grid-item item4">
+            Total Revenue: {{total_cost}} € <br>
+            Last Week: <br>
+            Last Month:
+        </div>
         <div class="grid-item item5">Tasks</div>
         <div class="grid-item item6">
             <ngx-charts-advanced-pie-chart class="ChartPie"
