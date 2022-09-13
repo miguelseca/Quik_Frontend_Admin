@@ -29,12 +29,15 @@
 
     <ng-container matColumnDef="isClosed">
       <mat-header-cell *matHeaderCellDef mat-sort-header>isClosed</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.isClosed}} </mat-cell>
+      <mat-cell *matCellDef="let element">
+        <span *ngIf="element?.isClosed === false" class="badge badge-success">Open</span>
+        <span *ngIf="element?.isClosed === true" class="badge badge-danger">Closed</span>  
+      </mat-cell>
     </ng-container>
 
    <ng-container matColumnDef="close">
       <mat-header-cell *matHeaderCellDef>Close</mat-header-cell>
-      <mat-cell *matCellDef="let element"><a class="ban" (click)="onCloseIssue(element)"><mat-icon>cancel</mat-icon></a></mat-cell>
+      <mat-cell *matCellDef="let element"><a class="close" (click)="onCloseIssue(element)"><mat-icon>cancel</mat-icon></a></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

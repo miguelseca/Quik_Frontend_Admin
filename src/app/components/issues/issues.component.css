@@ -1,0 +1,20 @@
+.issues-container {
+    background-color: lightgrey;
+    padding: 40px 40px 40px 40px;
+    height: 100vh;
+  }
+  
+  .close:hover {
+    cursor: pointer;
+    color: #c20000;
+  } 
+  
+  .mat-cell:nth-child(6),
+  .mat-header-cell:nth-child(6) {
+    flex: 0 0 80px;
+  }
+
+  .mat-cell:nth-child(5),
+  .mat-header-cell:nth-child(5) {
+    flex: 0 0 80px;
+  }
