@@ -52,7 +52,8 @@ export class MapsComponent implements OnInit {
             lng: item.currentLocation[1]
           },
           draggable: false,
-          label: `Service: ${item.service.code} Turno:${item.shift}`,
+          title: `Service: ${item.service.code} Turno:${item.shift}`,
+          label: `${item.service.licensePlate}`,
         }));
       });
 
