@@ -12,8 +12,23 @@
             </mat-card></div>
         <div class="grid-item item3">
             Total Trips: {{total_trips}} <br>
-            Total User: <br>
+            Total User: {{total_users}} <br>
             Registration Today:
+            <ngx-charts-bar-vertical
+    [view]="view"
+    scheme="cool"
+    [results]="single2"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical>
+            
         </div>
         <div class="grid-item item4">
             Total Revenue: {{total_cost}} € <br>
