@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
@@ -10,23 +10,14 @@ import { DriversService } from 'src/app/services/drivers.service';
 })
 export class MapsComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
-  @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow;
-  display : any;
-  zoom = 12;
-  center: google.maps.LatLngLiteral;
-  options: google.maps.MapOptions = {
-    zoomControl: true,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
-    maxZoom: 15,
-    minZoom: 8,
-    disableDefaultUI: true,
-  };
-  markers = [];
-  infoContent = '';
-  drivers: Driver[] = [];
+  @ViewChildren(MapInfoWindow) infoWindow: QueryList<MapInfoWindow>;
+  // @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow;
 
+  center: google.maps.LatLngLiteral;
+  markerPositions = [];
+  zoom = 12;
+
+  drivers: Driver[] = [];
 
   constructor(
     private driverService: DriversService
@@ -46,37 +37,29 @@ export class MapsComponent implements OnInit {
     this.driverService.getDrivers().subscribe((data) => {
       this.drivers = data;
       this.drivers.forEach(item => {
-        this.markers.push(new google.maps.Marker({
+        this.markerPositions.push(new google.maps.Marker({
           position: {
             lat: item.currentLocation[0],
             lng: item.currentLocation[1]
           },
           draggable: false,
-          title: `Service: ${item.service.code} Turno:${item.shift}`,
+          title: `S:${item.service.code} T:${item.shift}`,
           label: `${item.service.licensePlate}`,
         }));
       });
-
-    });
-
-  }
+   });
+     }
   
-  moveMap(event: google.maps.MapMouseEvent) {
-    if(event.latLng!= null)
-    this.center = (event.latLng.toJSON());
-  }
-
-  move(event: google.maps.MapMouseEvent) {
-    if(event.latLng != null)
-    this.display = event.latLng.toJSON();
-  }
-
-  logCenter() {
-    console.log(JSON.stringify(this.map.getCenter()));
-  }
-
-  openInfo(marker: MapMarker, content) {
-    this.infoContent = content;
-    this.info.open(marker);
-  }
+    openInfoWindow(marker: MapMarker, windowIndex: number) {
+      /// stores the current index in forEach
+      let curIdx = 0;
+      this.infoWindow.forEach((window: MapInfoWindow) => {
+        if (windowIndex === curIdx) {
+          window.open(marker);
+          curIdx++;
+        } else {
+          curIdx++;
+        }
+      });
+    }
 }
