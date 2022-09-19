@@ -1,0 +1,53 @@
+commit bbdf3c6e012d18f0b84c4fe2392147f629ae0bde	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Thu Sep 15 14:16:25 2022 +0100
+
+    code review
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit e51a1f596b968b8f644da30bb8e10968f1547456	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Thu Sep 15 14:07:38 2022 +0100
+
+    Get all user  (number on dashboard)
+    Get trips by date on bar chart (dashboard)
+
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/dashboard/dashboard.component.ts
+M	src/app/components/navbar/navbar.component.html
+
+commit 7e430243d03c1585ff000eb2f74dc84cc05ae440	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Thu Sep 15 14:06:00 2022 +0100
+
+    created bar chart html
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit 934a86d22929bf786572bd082a844e6dd741f3ba	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Thu Sep 15 14:05:18 2022 +0100
+
+    Dependencia moment
+
+M	package-lock.json
+M	package.json
+
+commit fa636308df8905edcfa4bcf96e469cbc73b28607	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Tue Sep 13 13:18:59 2022 +0100
+
+    Dashboard + driver calcel icon
+
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/drivers/drivers.component.html
+
+commit ac80b5b43983fbcb1150908e3fc860537a3d3a44	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Mon Sep 12 11:39:19 2022 +0100
+
+    dashboard css
+
+M	src/app/components/dashboard/dashboard.component.css
