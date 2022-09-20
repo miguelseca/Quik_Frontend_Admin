@@ -1,4 +1,4 @@
-commit bbdf3c6e012d18f0b84c4fe2392147f629ae0bde	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+commit bbdf3c6e012d18f0b84c4fe2392147f629ae0bde	refs/heads/main
 Author: Diogo Mendes <diogomendes@upskill.pt>
 Date:   Thu Sep 15 14:16:25 2022 +0100
 

@@ -1,0 +1,31 @@
+commit ec660e285e60477f793cff71a42e7ddb2dc8eccf	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Tue Sep 20 18:45:30 2022 +0100
+
+    ListTrips SequenceDiagram
+
+A	docs/Lvl 3 Sequence Diagrams/ListTrips.puml
+
+commit 488c1cb03892a595ead15dc29f95bba747480a0a	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Tue Sep 20 18:45:21 2022 +0100
+
+    ListDrivers sequenceDiagram
+
+A	docs/Lvl 3 Sequence Diagrams/ListDrivers.puml
+
+commit fb0054ebc479d8c58cfe8ed6bb7e4194e4144363	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Tue Sep 20 18:45:11 2022 +0100
+
+    ListClients sequenceDiagram
+
+A	docs/Lvl 3 Sequence Diagrams/ListClients.puml
+
+commit 468fb44aee9af6f3195a4e827453f89ec9c01766	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Tue Sep 20 18:45:00 2022 +0100
+
+    BanClient Sequence diagram
+
+A	docs/Lvl 3 Sequence Diagrams/BanClient.puml
