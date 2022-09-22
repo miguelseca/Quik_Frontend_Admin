@@ -1,0 +1,231 @@
+commit fad6b2fdfa876511a27b9caf8cf91785281f3e0f	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Thu Sep 15 11:40:38 2022 +0100
+
+    changed maps component css
+
+M	src/app/components/maps/maps.component.html
+M	src/app/components/maps/maps.component.ts
+
+commit e2920ac62957841c2d8f9922296cf00b497a791e	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Thu Sep 15 11:39:50 2022 +0100
+
+    Added routerlink to issues nav-item
+
+M	src/app/components/navbar/navbar.component.html
+
+commit 2c947b5136289945ec498f0ad5c3c24bde245d0d	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Thu Sep 15 11:39:00 2022 +0100
+
+    Changed auth-guard.service to auth.guard
+    - to respect angular directives
+
+M	src/app/_tests/auth-guard.service.spec.ts
+M	src/app/app-routing.module.ts
+R092	src/app/services/auth-guard.service.ts	src/app/services/auth.guard.ts
+
+commit c6f9e134c85920411b3d5b1fd5dbf8efbb8ede03	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 14 16:26:02 2022 +0100
+
+    added more info to driver cards
+
+M	src/app/components/maps/maps.component.html
+M	src/app/components/maps/maps.component.ts
+
+commit f249255e8cc01b5059c5dfd1eaff7d4cf8cbf59a	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 14 16:17:30 2022 +0100
+
+    Added fields to debug getNearestDriver
+
+M	src/app/components/maps/maps.component.html
+M	src/app/components/maps/maps.component.ts
+
+commit 2e6ae356acc7f4253d58b7178f706812274be9e7	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 13 14:47:05 2022 +0100
+
+    Updated issues component
+    - added css
+    - implemented status
+
+M	src/app/components/issues/issues.component.css
+M	src/app/components/issues/issues.component.html
+
+commit a55089a450ad562f5ba460c7e2c2f45c7a832803	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 13 13:14:27 2022 +0100
+
+    Fixed onCloseIssue
+    - was not passing correct object
+
+M	src/app/components/issues/issues.component.ts
+
+commit 8fab14c151f1957088ea7709f9b133efb9dc22a8	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 17:02:56 2022 +0100
+
+    Issues Component: added base table
+
+M	src/app/components/issues/issues.component.html
+M	src/app/components/issues/issues.component.ts
+
+commit f29b35a260db5cccb54f90381c78d0860ecf932f	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 16:31:25 2022 +0100
+
+    fixed edit driver bug
+
+M	src/app/components/drivers/drivers.component.html
+M	src/app/components/drivers/drivers.component.ts
+
+commit 67ddc9e2b76774f3d029423686413b68cb619082	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:55:31 2022 +0100
+
+    bug fix relative path from import + code cleanup
+
+M	src/app/components/new-driver/new-driver.component.ts
+
+commit 5208c2190240f931ec212e7e82cce5faca7378a7	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:53:50 2022 +0100
+
+    token storage: added constant variable to Storage
+    - quickly change storage location from localstorage to sessionstorage
+
+M	src/app/services/token-storage.service.ts
+
+commit b4ab931834a146474a5ede4881a4d8a907ad99eb	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:50:44 2022 +0100
+
+    Navbar: Added toggle button on breakpoint
+
+M	src/app/components/navbar/navbar.component.css
+M	src/app/components/navbar/navbar.component.html
+
+commit 8a192f10d27c20f9d1ddd6adb528493a41f6fcd8	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:50:16 2022 +0100
+
+    Maps Component
+    - implement google maps using @angular/google-maps
+    - implemented driver markers
+
+M	src/app/components/maps/maps.component.css
+M	src/app/components/maps/maps.component.html
+M	src/app/components/maps/maps.component.ts
+
+commit ae568115cd93cf8980ce8e3bc681615da0b751c1	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:48:37 2022 +0100
+
+    Dashboard minor changes
+
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit b3999dcbeaa3b621853ecaf26656c78c44a25083	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:48:14 2022 +0100
+
+    Improved Confirm component
+    - css to match overall theme
+
+M	src/app/components/confirm/confirm.component.css
+M	src/app/components/confirm/confirm.component.html
+
+commit 3c0e7267f0fc433a054c634a3c8779e149c73136	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:47:36 2022 +0100
+
+    Improved Drivers Component
+    - sorting, pagination, search
+
+M	src/app/components/drivers/drivers.component.css
+M	src/app/components/drivers/drivers.component.html
+M	src/app/components/drivers/drivers.component.ts
+
+commit cac1ec3d76e2f8caa60c79a87d526cb559ac34bb	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:47:24 2022 +0100
+
+    Improved Clients Component
+    - sorting, pagination, search
+
+M	src/app/components/clients/clients.component.css
+M	src/app/components/clients/clients.component.html
+M	src/app/components/clients/clients.component.ts
+
+commit 0f41a848fb6d460a0f170e506221be236865079e	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:46:19 2022 +0100
+
+    Tests e2e
+    - added missing imports to spec files
+
+M	src/app/_tests/app.component.spec.ts
+M	src/app/_tests/auth-guard.service.spec.ts
+A	src/app/_tests/auth.service.spec.ts
+M	src/app/_tests/clients.component.spec.ts
+M	src/app/_tests/clients.service.spec.ts
+M	src/app/_tests/confirm.component.spec.ts
+M	src/app/_tests/dashboard.component.spec.ts
+M	src/app/_tests/drivers.component.spec.ts
+M	src/app/_tests/drivers.service.spec.ts
+M	src/app/_tests/edit-driver.component.spec.ts
+M	src/app/_tests/issues.component.spec.ts
+M	src/app/_tests/issues.service.spec.ts
+A	src/app/_tests/login.component.spec.ts
+M	src/app/_tests/login.service.spec.ts
+M	src/app/_tests/new-driver.component.spec.ts
+A	src/app/_tests/token-storage.service.spec.ts
+M	src/app/_tests/trips.service.spec.ts
+
+commit 93b3e179e98fc9097f0f6abfc0cb47a538fe3817	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:45:26 2022 +0100
+
+    code cleanup
+    - removed unused code from app.component
+    - updated app.module
+    - removed httpOptions from services, now using auth.interceptor
+
+M	src/app/app.component.html
+M	src/app/app.component.ts
+M	src/app/app.module.ts
+M	src/app/services/auth.service.ts
+M	src/app/services/clients.service.ts
+M	src/app/services/drivers.service.ts
+M	src/app/services/issues.service.ts
+M	src/app/services/login.service.ts
+M	src/app/services/trips.service.ts
+
+commit 9ca745109ca14cbc79c710dbc70378b3ffb63bdd	refs/remotes/origin/codeCleanTablesMaps
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Mon Sep 12 11:43:19 2022 +0100
+
+    Code cleanup
+    - deleted unused login-page component
+    - deleted old interceptor
+    - renamed driver.ts
+    - added bootstrap to index.html
+    - cleaned style.css
+    - auth.interceptor unused code
+
+M	src/app/_helpers/auth.interceptor.ts
+D	src/app/_helpers/interceptor.ts
+D	src/app/_tests/driver-list.component.spec.ts
+D	src/app/_tests/login-page.component.spec.ts
+M	src/app/app-routing.module.ts
+D	src/app/components/login-page/login-page.component.css
+D	src/app/components/login-page/login-page.component.html
+D	src/app/components/login-page/login-page.component.ts
+R100	src/app/models/Driver.ts	src/app/models/driver.ts
+M	src/index.html
+M	src/styles.css

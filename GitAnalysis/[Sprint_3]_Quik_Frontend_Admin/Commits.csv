@@ -1,0 +1,31 @@
+ec660e2,2022-09-20 18:45:30 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,ListTrips SequenceDiagram
+488c1cb,2022-09-20 18:45:21 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,ListDrivers sequenceDiagram
+fb0054e,2022-09-20 18:45:11 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,ListClients sequenceDiagram
+468fb44,2022-09-20 18:45:00 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,BanClient Sequence diagram
+bafad88,2022-09-19 07:18:01 +0100,Paulo Proença,prp@isep.ipp.pt,Repository Analysis
+bbdf3c6,2022-09-15 14:16:25 +0100,Diogo Mendes,diogomendes@upskill.pt,code review
+e51a1f5,2022-09-15 14:07:38 +0100,Diogo Mendes,diogomendes@upskill.pt,Get all user  (number on dashboard) Get trips by date on bar chart (dashboard)
+7e43024,2022-09-15 14:06:00 +0100,Diogo Mendes,diogomendes@upskill.pt,created bar chart html
+934a86d,2022-09-15 14:05:18 +0100,Diogo Mendes,diogomendes@upskill.pt,Dependencia moment
+fad6b2f,2022-09-15 11:40:38 +0100,Rui Pinto,rfcapinto@gmail.com,changed maps component css
+e2920ac,2022-09-15 11:39:50 +0100,Rui Pinto,rfcapinto@gmail.com,Added routerlink to issues nav-item
+2c947b5,2022-09-15 11:39:00 +0100,Rui Pinto,rfcapinto@gmail.com,Changed auth-guard.service to auth.guard - to respect angular directives
+c6f9e13,2022-09-14 16:26:02 +0100,Rui Pinto,rfcapinto@gmail.com,added more info to driver cards
+f249255,2022-09-14 16:17:30 +0100,Rui Pinto,rfcapinto@gmail.com,Added fields to debug getNearestDriver
+2e6ae35,2022-09-13 14:47:05 +0100,Rui Pinto,rfcapinto@gmail.com,Updated issues component - added css - implemented status
+fa63630,2022-09-13 13:18:59 +0100,Diogo Mendes,diogomendes@upskill.pt,Dashboard + driver calcel icon
+a55089a,2022-09-13 13:14:27 +0100,Rui Pinto,rfcapinto@gmail.com,Fixed onCloseIssue - was not passing correct object
+8fab14c,2022-09-12 17:02:56 +0100,Rui Pinto,rfcapinto@gmail.com,Issues Component: added base table
+f29b35a,2022-09-12 16:31:25 +0100,Rui Pinto,rfcapinto@gmail.com,fixed edit driver bug
+67ddc9e,2022-09-12 11:55:31 +0100,Rui Pinto,rfcapinto@gmail.com,bug fix relative path from import + code cleanup
+5208c21,2022-09-12 11:53:50 +0100,Rui Pinto,rfcapinto@gmail.com,token storage: added constant variable to Storage - quickly change storage location from localstorage to sessionstorage
+b4ab931,2022-09-12 11:50:44 +0100,Rui Pinto,rfcapinto@gmail.com,Navbar: Added toggle button on breakpoint
+8a192f1,2022-09-12 11:50:16 +0100,Rui Pinto,rfcapinto@gmail.com,Maps Component - implement google maps using @angular/google-maps - implemented driver markers
+ae56811,2022-09-12 11:48:37 +0100,Rui Pinto,rfcapinto@gmail.com,Dashboard minor changes
+b3999dc,2022-09-12 11:48:14 +0100,Rui Pinto,rfcapinto@gmail.com,Improved Confirm component - css to match overall theme
+3c0e726,2022-09-12 11:47:36 +0100,Rui Pinto,rfcapinto@gmail.com,Improved Drivers Component - sorting, pagination, search
+cac1ec3,2022-09-12 11:47:24 +0100,Rui Pinto,rfcapinto@gmail.com,Improved Clients Component - sorting, pagination, search
+0f41a84,2022-09-12 11:46:19 +0100,Rui Pinto,rfcapinto@gmail.com,Tests e2e - added missing imports to spec files
+93b3e17,2022-09-12 11:45:26 +0100,Rui Pinto,rfcapinto@gmail.com,code cleanup - removed unused code from app.component - updated app.module - removed httpOptions from services, now using auth.interceptor
+9ca7451,2022-09-12 11:43:19 +0100,Rui Pinto,rfcapinto@gmail.com,Code cleanup - deleted unused login-page component - deleted old interceptor - renamed driver.ts - added bootstrap to index.html - cleaned style.css - auth.interceptor unused code
+ac80b5b,2022-09-12 11:39:19 +0100,Diogo Mendes,diogomendes@upskill.pt,dashboard css
