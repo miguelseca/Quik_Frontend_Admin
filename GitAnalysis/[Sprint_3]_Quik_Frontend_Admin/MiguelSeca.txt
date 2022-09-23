@@ -1,0 +1,11 @@
+commit cf337bd48feca38a7c0dbbc17c4722f3acd2510b	refs/heads/main
+Author: Miguel Seca <miguel.seca@gmail.com>
+Date:   Thu Sep 22 22:48:25 2022 +0100
+
+    firebase deployment changes
+
+A	.firebaserc
+A	.github/workflows/firebase-hosting-merge.yml
+A	.github/workflows/firebase-hosting-pull-request.yml
+M	angular.json
+A	firebase.json

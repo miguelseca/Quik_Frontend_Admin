@@ -1,4 +1,4 @@
-commit ec660e285e60477f793cff71a42e7ddb2dc8eccf	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+commit ec660e285e60477f793cff71a42e7ddb2dc8eccf	refs/heads/main
 Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
 Date:   Tue Sep 20 18:45:30 2022 +0100
 
