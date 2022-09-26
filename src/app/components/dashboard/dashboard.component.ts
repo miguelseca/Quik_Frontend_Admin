@@ -18,7 +18,7 @@ export class DashboardComponent {
   total_trips: number = 0;
   total_cost: number = 0;
   total_users: number = 0;
-  trips_today: number = 0;
+ 
   quick: number = 0;
   quickgreen: number = 0;
   quickxl: number = 0;
@@ -37,6 +37,8 @@ export class DashboardComponent {
   single2: any[];
   multi: any[];
 
+  tripsToday:number=0;
+  avgTripTimeToday: number=0;  
   view2: any[] = [700, 400];
 
   morning: number = 0
@@ -90,6 +92,7 @@ export class DashboardComponent {
       console.log(t)
       this.trips = t;
       this.total_trips = this.trips.length;
+      let durationSum = 0;
       for (let i = 0; i < this.trips.length; i++) {
         this.total_cost += this.trips[i].cost;
         switch (this.trips[i].carClass) {
@@ -111,6 +114,7 @@ export class DashboardComponent {
           default:
             '';
             break;
+
         }
         
         let tripHours = moment(this.trips[i].createdAt).hours();
@@ -127,11 +131,19 @@ export class DashboardComponent {
           console.log("Night")
           this.night++;
         }
+        
+        if (moment(this.trips[i].createdAt).dayOfYear() == moment().dayOfYear()) {
+          this.tripsToday += 1;
+          durationSum += this.trips[i].duration;
+          console.log(this.trips[i].duration)
+        }
       }
 
-   
-
-
+      if (this.tripsToday > 0 ) {
+        this.avgTripTimeToday = durationSum / this.tripsToday;
+        
+      }
+      
       console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
 
       this.single = [

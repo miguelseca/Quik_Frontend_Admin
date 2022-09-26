@@ -2,37 +2,43 @@
 <div class="dashboard">
     <div class="grid-container">
         <div class="grid-item item1">
-            Trips today: <br>
-            Avg Time: <br>
-            Last Week:
+            Trips today:  {{tripsToday}}  
+            Avg Time:  {{avgTripTimeToday}} Segundos 
         </div>
         <div class="grid-item item2">
             <mat-card class="demo-inline-calendar-card">
                 <mat-calendar [(selected)]="selected"></mat-calendar>
             </mat-card></div>
         <div class="grid-item item3">
-            Total Trips: {{total_trips}} <br>
-            Total User: {{total_users}} <br>
-            <ngx-charts-bar-vertical
-    [view]="view"
-    scheme="cool"
-    [results]="single2"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  (select)="onSelect($event)">
-</ngx-charts-bar-vertical>
+            <div class="grid-container2">
+                <div class="grid-item item11">
+                    Total Trips: <br> {{total_trips}}
+                </div>
+                <div class="grid-item item33">
+                    <ngx-charts-bar-vertical
+                    [view]="view"
+                    scheme="cool"
+                    [results]="single2"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>
+                </div>  
+                <div class="grid-item item44">
+                    Total User: <br> {{total_users}} 
+                   
+                </div>
             
+            </div>
         </div>
         <div class="grid-item item4">
-            Total Revenue: {{total_cost}} € <br>
-            Last Week: <br>
-            Last Month:
+             Total Revenue: <br>{{total_cost}} € 
         </div>
         <div class="grid-item item5">Tasks</div>
         <div class="grid-item item6">
