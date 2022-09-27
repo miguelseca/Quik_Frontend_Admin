@@ -2,7 +2,7 @@
 with fixed navbar must change padding: 20px to 80px
 */
 .clients-container {
-  background-color: lightgrey;
+  background-color: #EFF6FB;
   padding: 40px 40px 40px 40px;
   height: 100vh;
 }

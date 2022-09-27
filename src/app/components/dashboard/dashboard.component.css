@@ -1,7 +1,7 @@
 .dashboard {
   width: 100%;
   height: fit-content;
-  background-color: grey;
+  background-color: #EFF6FB;
   align-items: center;
   padding-top: 3px;
 
@@ -10,7 +10,7 @@
 .grid-container {
   display: grid;
   margin: 40px 40px 0 40px;
-
+  background-color: #EFF6FB;
   gap: 20px;
   padding-bottom: 30px;
   height: 90%;
