@@ -1,4 +1,4 @@
-import { EnumServiceCodeToTextPipe } from './enum-service-code-to-text.pipe';
+import { EnumServiceCodeToTextPipe } from '../enums/enum-service-code-to-text.pipe';
 
 describe('EnumServiceCodeToTextPipe', () => {
   it('create an instance', () => {

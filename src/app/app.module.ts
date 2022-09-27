@@ -72,6 +72,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { EnumServiceCodeToTextPipe } from './enums/enum-service-code-to-text.pipe';
+import { EnumShiftToTextPipe } from './enums/enum-shift-to-text.pipe';
 
 //*===============================================================================
 
@@ -89,6 +90,7 @@ import { EnumServiceCodeToTextPipe } from './enums/enum-service-code-to-text.pip
     NavbarComponent,
     MapsComponent,
     EnumServiceCodeToTextPipe,
+    EnumShiftToTextPipe,
   ],
   imports: [
     BrowserModule,
