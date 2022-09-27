@@ -140,7 +140,7 @@ export class DashboardComponent {
       }
 
       if (this.tripsToday > 0 ) {
-        this.avgTripTimeToday = durationSum / this.tripsToday;
+        this.avgTripTimeToday = (durationSum / this.tripsToday)/60;
         
       }
       

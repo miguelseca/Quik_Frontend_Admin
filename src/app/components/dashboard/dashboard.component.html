@@ -2,53 +2,41 @@
 <div class="dashboard">
     <div class="grid-container">
         <div class="grid-item item1">
-            Trips today:  {{tripsToday}}  
-            Avg Time:  {{avgTripTimeToday}} Segundos 
+            <p>Trips today: <br><br> <span style="font-size: 50px"> {{tripsToday}}</span></p><br>
+            <p>Avg Time:<br><br> <span style="font-size: 50px">{{avgTripTimeToday | number:'1.0-0'}} </span><br><br> Minutos
+            </p>
         </div>
         <div class="grid-item item2">
             <mat-card class="demo-inline-calendar-card">
                 <mat-calendar [(selected)]="selected"></mat-calendar>
-            </mat-card></div>
+            </mat-card>
+        </div>
         <div class="grid-item item3">
             <div class="grid-container2">
                 <div class="grid-item item11">
                     Total Trips: <br> {{total_trips}}
                 </div>
                 <div class="grid-item item33">
-                    <ngx-charts-bar-vertical
-                    [view]="view"
-                    scheme="cool"
-                    [results]="single2"
-                    [gradient]="gradient"
-                    [xAxis]="showXAxis"
-                    [yAxis]="showYAxis"
-                    [legend]="showLegend"
-                    [showXAxisLabel]="showXAxisLabel"
-                    [showYAxisLabel]="showYAxisLabel"
-                    [xAxisLabel]="xAxisLabel"
-                    [yAxisLabel]="yAxisLabel"
-                    (select)="onSelect($event)">
-                </ngx-charts-bar-vertical>
-                </div>  
-                <div class="grid-item item44">
-                    Total User: <br> {{total_users}} 
-                   
+                    <ngx-charts-bar-vertical [view]="view" scheme="cool" [results]="single2" [gradient]="gradient"
+                        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+                        (select)="onSelect($event)">
+                    </ngx-charts-bar-vertical>
                 </div>
-            
+                <div class="grid-item item44">
+                    Total User: <br> {{total_users}}
+
+                </div>
+
             </div>
         </div>
         <div class="grid-item item4">
-             Total Revenue: <br>{{total_cost}} € 
+            Total Revenue: <br><br><span style="font-size: 50px">{{total_cost | number:'1.0-0'}}</span> €
         </div>
         <div class="grid-item item5">Tasks</div>
         <div class="grid-item item6">
-            <ngx-charts-advanced-pie-chart class="ChartPie"
-                [view]="view"
-                scheme="vivid"
-                [results]="single" 
-                [gradient]="gradient"
-                (select)="onSelect($event)"
-                (activate)="onActivate($event)"
+            <ngx-charts-advanced-pie-chart class="ChartPie" [view]="view" scheme="vivid" [results]="single"
+                [gradient]="gradient" (select)="onSelect($event)" (activate)="onActivate($event)"
                 (deactivate)="onDeactivate($event)">
             </ngx-charts-advanced-pie-chart>
         </div>
