@@ -13,14 +13,14 @@ import { MapsComponent } from './components/maps/maps.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginAdminComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
-  { path: 'drivers', component: DriversComponent, canActivate: [AuthGuard] },
-  { path: 'newDriver', component: NewDriverComponent, canActivate: [AuthGuard] },
-  { path: 'editDriver', component: EditDriverComponent, canActivate: [AuthGuard] },
-  { path: 'issues', component: IssuesComponent, canActivate: [AuthGuard] },
-  { path: 'maps', component: MapsComponent, canActivate: [AuthGuard] },
+  { path: 'login', title:'Login', component: LoginAdminComponent},
+  { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [AuthGuard] },
+  { path: 'clients', component: ClientsComponent, title:'Clients', canActivate: [AuthGuard] },
+  { path: 'drivers', component: DriversComponent, title:'Drivers', canActivate: [AuthGuard] },
+  { path: 'newDriver', component: NewDriverComponent, title:'New Driver', canActivate: [AuthGuard] },
+  { path: 'editDriver', component: EditDriverComponent, title:'Edit Driver', canActivate: [AuthGuard] },
+  { path: 'issues', component: IssuesComponent, title:'Issues', canActivate: [AuthGuard] },
+  { path: 'maps', component: MapsComponent, title:'Maps', canActivate: [AuthGuard] },
 ];
 
 @NgModule({
