@@ -50,7 +50,7 @@ export class IssuesComponent implements OnInit {
     dialogConfig.width = '400px';
     dialogConfig.data = {
       entity: issue,
-      message: `Do you really want to close ${issue.description}?`,
+      message: `Do you really want to close this issue?`,
     };
 
     const umDialog = this.matDialog.open(ConfirmComponent, dialogConfig);
