@@ -25,6 +25,7 @@ export class ClientsComponent implements OnInit {
 
   @ViewChild('page') paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  // passStatus: any;
 
   constructor(
     private clientService: ClientsService,
@@ -46,11 +47,12 @@ export class ClientsComponent implements OnInit {
   }
 
   onBanClick(client: Client): void {
+    // this.passStatus = client.status.isBanned == false ? "ban" : "unban";
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-    // dialogConfig.height = '50%';
+    dialogConfig.height = '200px';
     dialogConfig.width = '400px';
     dialogConfig.data = {
       entity: client.email,
@@ -61,8 +63,8 @@ export class ClientsComponent implements OnInit {
 
     umDialog.afterClosed().subscribe((result) => {
       if (result) {
-        this.logSnacks(`${client.email} banned.`, 3000);
         this.clientService.banClient(client).subscribe((data) => {
+          this.logSnacks(`${client.email} banned.`, 3000);
           // this.router.navigateByUrl('/clients');
           this.getClients();
         });
