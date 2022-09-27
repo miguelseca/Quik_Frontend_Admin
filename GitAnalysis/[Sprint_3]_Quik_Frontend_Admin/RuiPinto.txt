@@ -1,3 +1,108 @@
+commit 57ed0cfbfba25495b95a196c056a0ee4bec24e82	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 22:53:28 2022 +0100
+
+    code cleanup
+
+M	src/app/components/clients/clients.component.ts
+M	src/index.html
+
+commit 3ca53aad0e43de3d37483c723af0d740b4f2d233	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 22:53:17 2022 +0100
+
+    minor fixes in issues
+
+M	src/app/components/issues/issues.component.css
+M	src/app/components/issues/issues.component.ts
+
+commit 8a1c89d83c00915304f3d60f336df91d0eb2f1e0	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 22:53:00 2022 +0100
+
+    Fixed bug in banclient method
+
+M	src/app/services/clients.service.ts
+
+commit 392d64e169e7ceeff97ee24aac180c362daeb5aa	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:17:14 2022 +0100
+
+    minor fixes
+
+M	src/app/app.component.html
+M	src/app/app.module.ts
+M	src/app/components/navbar/navbar.component.html
+
+commit b3f95ab82fb71a8c9c9329d8d8c9ef4c3b5af847	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:10:42 2022 +0100
+
+    folder restructuring
+
+R100	src/app/enum-service-code-to-text.pipe.ts	src/app/enums/enum-service-code-to-text.pipe.ts
+R100	src/app/enum-service-code-to-text.spec.ts	src/app/enums/enum-service-code-to-text.spec.ts
+R100	src/app/service-codes.ts	src/app/enums/service-codes.ts
+R100	src/app/service-shifts.ts	src/app/enums/service-shifts.ts
+
+commit 8c95760792993083dfc0314f2e8dc699a951a025	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:08:44 2022 +0100
+
+    added title to components
+    send title from parent to child navbar
+
+M	src/app/components/clients/clients.component.html
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+M	src/app/components/drivers/drivers.component.html
+M	src/app/components/drivers/drivers.component.ts
+M	src/app/components/issues/issues.component.html
+M	src/app/components/issues/issues.component.ts
+M	src/app/components/login/login.component.css
+M	src/app/components/login/login.component.ts
+M	src/app/components/maps/maps.component.html
+M	src/app/components/maps/maps.component.ts
+M	src/app/components/navbar/navbar.component.ts
+
+commit 6e28ee64566ead3cf33428e893c806bf35fff112	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:07:14 2022 +0100
+
+    updated modules
+
+M	src/app/app.module.ts
+
+commit 0e894e3aa80d85073007b0aba118c9eea95f9c4f	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:07:00 2022 +0100
+
+    creates pipe for enums
+    added enums for service codes and shifts
+
+A	src/app/enum-service-code-to-text.pipe.ts
+A	src/app/enum-service-code-to-text.spec.ts
+A	src/app/service-codes.ts
+A	src/app/service-shifts.ts
+
+commit ff788464aeb939e350ab4e3920a290446371780a	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:05:57 2022 +0100
+
+    added title to routes
+
+M	src/app/app-routing.module.ts
+
+commit 936c4160af2e2e76f17dfb954cfe499821a90cfd	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 21:05:39 2022 +0100
+
+    updated auth guard
+    - better checking of token
+    - redirects to login if not loggedIn
+
+M	src/app/services/auth.guard.ts
+
 commit fad6b2fdfa876511a27b9caf8cf91785281f3e0f	refs/heads/main
 Author: Rui Pinto <rfcapinto@gmail.com>
 Date:   Thu Sep 15 11:40:38 2022 +0100
