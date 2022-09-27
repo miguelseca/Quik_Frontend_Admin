@@ -13,6 +13,7 @@ export class MapsComponent implements OnInit {
   @ViewChildren(MapInfoWindow) infoWindow: QueryList<MapInfoWindow>;
   // @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow;
 
+  title = 'Maps';
   center: google.maps.LatLngLiteral;
   markerPositions = [];
   zoom = 12;
@@ -21,7 +22,7 @@ export class MapsComponent implements OnInit {
 
   constructor(
     private driverService: DriversService
-  ) {}
+  ) { }
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -30,36 +31,37 @@ export class MapsComponent implements OnInit {
         lng: position.coords.longitude,
       };
     });
-    this.getalldrivers();
+    this.addMarkers();
   }
 
-  getalldrivers() {
+  addMarkers() {
     this.driverService.getDrivers().subscribe((data) => {
       this.drivers = data;
-      this.drivers.forEach(item => {
+      this.drivers.forEach((driver) => {
         this.markerPositions.push(new google.maps.Marker({
           position: {
-            lat: item.currentLocation[0],
-            lng: item.currentLocation[1]
+            lat: driver.currentLocation[0],
+            lng: driver.currentLocation[1],
           },
           draggable: false,
-          title: `S:${item.service.code} T:${item.shift}`,
-          label: `${item.service.licensePlate}`,
+          title: `S:${driver.service.code} T:${driver.shift}`,
+          label: `${driver.service.licensePlate}`,
         }));
       });
-   });
-     }
-  
-    openInfoWindow(marker: MapMarker, windowIndex: number) {
-      /// stores the current index in forEach
-      let curIdx = 0;
-      this.infoWindow.forEach((window: MapInfoWindow) => {
-        if (windowIndex === curIdx) {
-          window.open(marker);
-          curIdx++;
-        } else {
-          curIdx++;
-        }
-      });
-    }
+    });
+  }
+
+  openInfoWindow(marker: MapMarker, windowIndex: number) {
+    /// stores the current index in forEach
+    let curIdx = 0;
+    this.infoWindow.forEach((window: MapInfoWindow) => {
+      if (windowIndex === curIdx) {
+        content:  "<p>Marker Location: </p>";
+        window.open(marker);
+        curIdx++;
+      } else {
+        curIdx++;
+      }
+    });
+  }
 }

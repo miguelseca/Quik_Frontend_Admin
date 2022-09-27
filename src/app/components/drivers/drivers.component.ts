@@ -16,6 +16,7 @@ import { NewDriverComponent } from '../new-driver/new-driver.component';
   styleUrls: ['./drivers.component.css'],
 })
 export class DriversComponent implements OnInit {
+  title = "Drivers";
   drivers: Driver[] = [];
   displayedColumns = [
     'nif', 'firstName', 'lastName', 'phone', 'email',
@@ -54,6 +55,8 @@ export class DriversComponent implements OnInit {
   getDrivers(): void {
     this.driversService.getDrivers().subscribe((c) => {
       this.dataSource = new MatTableDataSource((this.drivers = c));
+      console.log(c);
+      
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

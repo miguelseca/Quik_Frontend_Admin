@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [title]="title"></app-navbar>
 <div class="drivers-container">
   <h1><strong>Drivers List</strong></h1>
     <button mat-raised-button type="button" class="dark-btn-add-river f-r" (click)="createDriver()">Create New Driver</button>
@@ -35,7 +35,7 @@
 
       <ng-container matColumnDef="code">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.service.code}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.code | enumServiceCodeToText }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="carBrand">  
@@ -60,7 +60,7 @@
 
       <ng-container matColumnDef="lastTrip">
         <mat-header-cell *matHeaderCellDef mat-sort-header>LastTrip</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastTrip}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastTrip | date:'d/M/yy, H:mm a'}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="edit">

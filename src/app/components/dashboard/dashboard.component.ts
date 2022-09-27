@@ -11,7 +11,7 @@ import * as  moment from 'moment';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  title = 'Quik Dashboard';
+  title = 'Dashboard';
   selected: Date | null | undefined;
   clients: Client[] = [];
   trips: Trip[] = [];

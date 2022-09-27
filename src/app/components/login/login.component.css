@@ -1,8 +1,8 @@
 /* CUSTOM */
 .login-box {
-  height: 100vh;
+  height: 150vh;
   background-image: url('../../../assets/images/bg-image.png');
-  background-size:cover;
+  background-size: cover ;
   padding:50px;
 }
 

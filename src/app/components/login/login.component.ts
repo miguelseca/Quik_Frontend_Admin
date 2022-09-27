@@ -56,10 +56,12 @@ export class LoginAdminComponent implements OnInit {
 
         // this.reloadPage();
         this.router.navigateByUrl('dashboard');
+      } else if (data.role == 'client' ) {
+        this.errorMessage = `${data.role}'s not allowed!`;
+        this.isLoginFailed = true;
       } else {
         this.errorMessage = data;
         this.isLoginFailed = true;
-        // this.logSnacks('Autenticação falhou. '+`${data}`, 2000);
       }
     });
   }

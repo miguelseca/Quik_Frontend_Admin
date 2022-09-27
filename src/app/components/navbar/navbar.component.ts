@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TokenStorageService } from '../../services/token-storage.service';
 
 @Component({
@@ -7,16 +7,14 @@ import { TokenStorageService } from '../../services/token-storage.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  @Input() title = '';
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
   username?: string;
-  title = 'app'   ;
-
 
   constructor(private tokenStorageService: TokenStorageService) { }
-
+  
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
   
