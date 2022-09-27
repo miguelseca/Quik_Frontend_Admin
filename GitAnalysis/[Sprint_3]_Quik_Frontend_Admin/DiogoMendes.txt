@@ -1,3 +1,25 @@
+commit 14d9b7bdf6dcfe5849d90b736c932375c18a7466	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Tue Sep 27 14:30:42 2022 +0100
+
+    AvgTripTimeToday to Min
+    Code Review Html
+
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit c369266e17952575025404d4fd18fe3f6b0fab99	refs/heads/main
+Author: Diogo Mendes <diogomendes@upskill.pt>
+Date:   Mon Sep 26 11:21:14 2022 +0100
+
+    Trips today + Avg Time connection
+    Grid and chart on dashboard
+
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/dashboard/dashboard.component.html
+M	src/app/components/dashboard/dashboard.component.ts
+
 commit bbdf3c6e012d18f0b84c4fe2392147f629ae0bde	refs/heads/main
 Author: Diogo Mendes <diogomendes@upskill.pt>
 Date:   Thu Sep 15 14:16:25 2022 +0100

@@ -1,3 +1,16 @@
+57ed0cf,2022-09-27 22:53:28 +0100,Rui Pinto,rfcapinto@gmail.com,code cleanup
+3ca53aa,2022-09-27 22:53:17 +0100,Rui Pinto,rfcapinto@gmail.com,minor fixes in issues
+8a1c89d,2022-09-27 22:53:00 +0100,Rui Pinto,rfcapinto@gmail.com,Fixed bug in banclient method
+392d64e,2022-09-27 21:17:14 +0100,Rui Pinto,rfcapinto@gmail.com,minor fixes
+b3f95ab,2022-09-27 21:10:42 +0100,Rui Pinto,rfcapinto@gmail.com,folder restructuring
+8c95760,2022-09-27 21:08:44 +0100,Rui Pinto,rfcapinto@gmail.com,added title to components send title from parent to child navbar
+6e28ee6,2022-09-27 21:07:14 +0100,Rui Pinto,rfcapinto@gmail.com,updated modules
+0e894e3,2022-09-27 21:07:00 +0100,Rui Pinto,rfcapinto@gmail.com,creates pipe for enums added enums for service codes and shifts
+ff78846,2022-09-27 21:05:57 +0100,Rui Pinto,rfcapinto@gmail.com,added title to routes
+936c416,2022-09-27 21:05:39 +0100,Rui Pinto,rfcapinto@gmail.com,updated auth guard - better checking of token - redirects to login if not loggedIn
+14d9b7b,2022-09-27 14:30:42 +0100,Diogo Mendes,diogomendes@upskill.pt,AvgTripTimeToday to Min Code Review Html
+c369266,2022-09-26 11:21:14 +0100,Diogo Mendes,diogomendes@upskill.pt,Trips today + Avg Time connection Grid and chart on dashboard
+378e02d,2022-09-23 19:27:02 +0100,Paulo Proença,prp@isep.ipp.pt,Repository Analysis
 cf337bd,2022-09-22 22:48:25 +0100,Miguel Seca,miguel.seca@gmail.com,firebase deployment changes
 a871a52,2022-09-20 21:33:04 +0100,Paulo Proença,prp@isep.ipp.pt,Repository Analysis
 ec660e2,2022-09-20 18:45:30 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,ListTrips SequenceDiagram
