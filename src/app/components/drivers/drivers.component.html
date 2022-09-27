@@ -9,58 +9,58 @@
     </mat-form-field>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z2" matSort>
       <ng-container matColumnDef="nif">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Nif</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="nif">Nif</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.nif}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="firstName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="firstName">FirstName</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lastName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>LastName</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="lastName">LastName</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="phone">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="phone">Phone</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="email">Email</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>>
       </ng-container>
 
-      <ng-container matColumnDef="code">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.service.code | enumServiceCodeToText }} </mat-cell>
+      <ng-container matColumnDef="service.code">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="service.code">Code</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.service.code | enumServiceCodeToText}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="carBrand">  
-        <mat-header-cell *matHeaderCellDef mat-sort-header>CarBrand</mat-header-cell>
+      <ng-container matColumnDef="service.carBrand">  
+        <mat-header-cell *matHeaderCellDef mat-sort-header="service.carBrand">CarBrand</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.service.carBrand}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="carModel">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>CarModel</mat-header-cell>
+      <ng-container matColumnDef="service.carModel">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="service.carModel">CarModel</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.service.carModel}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="licensePlate">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>LicensePlate</mat-header-cell>
+      <ng-container matColumnDef="service.licensePlate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header="service.licensePlate">LicensePlate</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.service.licensePlate}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="shift">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Shift</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.shift}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="shift">Shift</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.shift | enumShiftToText}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lastTrip">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>LastTrip</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastTrip | date:'d/M/yy, H:mm a'}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="lastTrip">LastTrip</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastTrip | date:'d/M/yy, HH:mm'}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="edit">

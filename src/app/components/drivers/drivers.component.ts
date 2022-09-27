@@ -20,7 +20,7 @@ export class DriversComponent implements OnInit {
   drivers: Driver[] = [];
   displayedColumns = [
     'nif', 'firstName', 'lastName', 'phone', 'email',
-    'code', 'carBrand', 'carModel', 'licensePlate', 'shift',
+    'service.code', 'service.carBrand', 'service.carModel', 'service.licensePlate', 'shift',
     'lastTrip', 'edit', 'delete',
   ];
   dataSource!: MatTableDataSource<Driver>;
@@ -55,11 +55,24 @@ export class DriversComponent implements OnInit {
   getDrivers(): void {
     this.driversService.getDrivers().subscribe((c) => {
       this.dataSource = new MatTableDataSource((this.drivers = c));
-      console.log(c);
-      
+      // console.log(c);
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sortingDataAccessor = this.pathDataAccessor;
       this.dataSource.sort = this.sort;
     });
+  }
+
+  pathDataAccessor(item: any, path: string): any {
+    console.log("item: ", item, "path: ", path);
+    let x = path.split('.').reduce((accumulator: any, key: string) => {
+      return accumulator ? accumulator[key] : undefined;}, item);
+    
+    console.log("PATH:SPLIT", x);
+      
+    return path.split('.')
+      .reduce((accumulator: any, key: string) => {
+        return accumulator ? accumulator[key] : undefined;
+      }, item);
   }
 
   onDeleteClick(driver: Driver): void {
