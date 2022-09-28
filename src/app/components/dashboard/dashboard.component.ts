@@ -91,7 +91,7 @@ export class DashboardComponent {
     this.tripService.getAllTrips().subscribe((t) => {
       console.log(t)
       this.trips = t;
-      this.total_trips = this.trips.length;
+      this.total_trips = this.trips.length-1;
       let durationSum = 0;
       for (let i = 0; i < this.trips.length; i++) {
         this.total_cost += this.trips[i].cost;
