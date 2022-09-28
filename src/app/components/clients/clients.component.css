@@ -22,8 +22,8 @@ with fixed navbar must change padding: 20px to 80px
   flex: 0 0 100px;
 }
 
-.mat-cell:nth-child(8),
-.mat-header-cell:nth-child(8) {
+.mat-cell:nth-child(7),
+.mat-header-cell:nth-child(7) {
   flex: 0 0 60px;
 }
 /* Row hover bakground */

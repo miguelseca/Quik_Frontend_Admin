@@ -18,8 +18,7 @@ export class ClientsComponent implements OnInit {
   title = 'Clients';
   clients: Client[] = [];
   displayedColumns = [
-    'emailVerified', 'email', 'isBanned', 'phone', 'firstName', 'lastName',
-    'paymentMethod', 'ban', 
+    'emailVerified', 'email', 'isBanned', 'phone', 'firstName', 'lastName', 'ban', 
   ];
   dataSource!: MatTableDataSource<Client>;
 
