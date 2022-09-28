@@ -1,0 +1,53 @@
+@startuml Login
+
+skinparam sequenceMessageAlign center
+skinparam RoundCorner 15
+title Login
+
+
+participant View as v
+participant Component as c
+participant Model as m
+participant AuthService as s
+
+[o-> v: Initializes Login process
+activate v
+
+v -> c: onSubmit ()
+activate c
+
+c -> m: onSubmit ()
+activate m
+m --> c: Client Model
+deactivate m
+
+c -> c: saveToken ()
+c -> c: saveUser ()
+
+c -> s: login ()
+activate s
+
+s ->o]: login ()
+
+s<--]: Return Login process result
+
+s --> c: Return Login process result
+
+c --> v: Return Login process result
+
+[<--v: Displays Login process result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
