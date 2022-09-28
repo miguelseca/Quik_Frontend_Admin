@@ -28,7 +28,9 @@ deactivate s
 c --> v: Returns result
 deactivate c
 
-v -->[ : Displays result
+v -->[ : Displays confirmation message to delete driver
+
+[-> v: Confirms deletion
 
 
 
