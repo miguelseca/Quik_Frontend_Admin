@@ -2,6 +2,8 @@ import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 import Driver from 'src/app/models/driver';
 import { DriversService } from 'src/app/services/drivers.service';
+import  { EnumServiceCodeToTextPipe } from 'src/app/enums/enum-service-code-to-text.pipe';
+import {EnumShiftToTextPipe} from 'src/app/enums/enum-shift-to-text.pipe';
 
 @Component({
   selector: 'app-maps',
@@ -20,9 +22,13 @@ export class MapsComponent implements OnInit {
 
   drivers: Driver[] = [];
 
+  servCode : string;
+  servShift: string;
   constructor(
-    private driverService: DriversService
-  ) { }
+    private driverService: DriversService,
+    private enumServiceCodeToTextPipe: EnumServiceCodeToTextPipe,
+    private enumShiftToTextPipe: EnumShiftToTextPipe
+  ) {}
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -38,13 +44,15 @@ export class MapsComponent implements OnInit {
     this.driverService.getDrivers().subscribe((data) => {
       this.drivers = data;
       this.drivers.forEach((driver) => {
+        this.servCode = this.enumServiceCodeToTextPipe.transform(driver.service.code);
+        this.servShift = this.enumShiftToTextPipe.transform(driver.shift);
         this.markerPositions.push(new google.maps.Marker({
           position: {
             lat: driver.currentLocation[0],
             lng: driver.currentLocation[1],
           },
           draggable: false,
-          title: `S:${driver.service.code} T:${driver.shift}`,
+          title: `${this.servCode} ${this.servShift}`,
           label: `${driver.service.licensePlate}`,
         }));
       });

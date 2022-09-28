@@ -164,6 +164,6 @@ import { EnumShiftToTextPipe } from './enums/enum-shift-to-text.pipe';
     GoogleMapsModule,
   ],
   bootstrap: [AppComponent],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,EnumServiceCodeToTextPipe,EnumShiftToTextPipe],
 })
 export class AppModule {}
