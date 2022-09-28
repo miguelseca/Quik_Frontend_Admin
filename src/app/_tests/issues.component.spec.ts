@@ -1,5 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
 
 import { IssuesComponent } from '../components/issues/issues.component';
 
@@ -10,7 +12,12 @@ describe('IssuesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ IssuesComponent ],
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, MatDialogModule],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
+
     })
     .compileComponents();
 

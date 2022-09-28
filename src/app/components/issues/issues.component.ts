@@ -17,7 +17,7 @@ export class IssuesComponent implements OnInit {
   title = 'Issues';
   issues: Issue[] = [];
   displayedColumns = [
-    'date', 'tripID', 'email', 'description', 'isClosed', 'close',
+    'date', 'email', 'description', 'isClosed', 'close',
   ];
   dataSource!: MatTableDataSource<Issue>;
 
