@@ -13,7 +13,7 @@ import { MapsComponent } from './components/maps/maps.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', title:'Login', component: LoginAdminComponent},
+  { path: 'login', component: LoginAdminComponent, title:'Login' },
   { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [AuthGuard] },
   { path: 'clients', component: ClientsComponent, title:'Clients', canActivate: [AuthGuard] },
   { path: 'drivers', component: DriversComponent, title:'Drivers', canActivate: [AuthGuard] },
@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: 'editDriver', component: EditDriverComponent, title:'Edit Driver', canActivate: [AuthGuard] },
   { path: 'issues', component: IssuesComponent, title:'Issues', canActivate: [AuthGuard] },
   { path: 'maps', component: MapsComponent, title:'Maps', canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
+
 ];
 
 @NgModule({
