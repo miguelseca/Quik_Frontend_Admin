@@ -1,0 +1,34 @@
+@startuml List Issues
+
+skinparam sequenceMessageAlign center
+skinparam RoundCorner 15
+title List Issues
+
+participant View as v
+participant Component as c
+participant Service as s
+
+
+[-> v: Sends request to list Issues
+activate v
+
+v -> c: getAllIssues ()
+activate c
+
+c -> s: getAllIssues ()
+activate s
+
+s ->o]: getAllIssues ()
+
+s<--]: Returns all Issues
+
+s --> c: Returns all Issues
+deactivate s
+
+c --> v: Returns all Issues
+deactivate c
+
+v -->[ : Displays all Issues on a table
+
+
+
