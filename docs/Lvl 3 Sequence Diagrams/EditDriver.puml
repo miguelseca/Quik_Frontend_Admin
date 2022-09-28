@@ -1,0 +1,50 @@
+@startuml Edit Driver
+
+skinparam sequenceMessageAlign center
+skinparam RoundCorner 15
+title Edit Driver
+
+participant View as v
+participant Component as c
+participant Service as s
+
+
+[o-> v: Begins Search
+activate v
+
+v --> c: Inicializes View search
+
+[<-- v: Request Driver info
+
+[o-> v: Inserts Info
+
+v -> c: getDriver ()
+activate c
+c -> c: onEditClick ()
+
+c -> c: onConfirmClick ()
+
+c -> s: updateDriver ()
+activate s
+
+s ->o]: updateDriver ()
+
+s <--]: Driver Updated
+
+s --> c: Driver Updated
+deactivate s
+
+c --> v: Driver Updated
+deactivate c
+
+[<-- v: Displays confirmation message
+
+
+
+
+
+
+
+
+
+
