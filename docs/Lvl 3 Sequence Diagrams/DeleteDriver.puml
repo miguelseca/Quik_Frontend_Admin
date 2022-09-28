@@ -1,0 +1,34 @@
+@startuml Delete Driver
+
+skinparam sequenceMessageAlign center
+skinparam RoundCorner 15
+title Delete Driver
+
+participant View as v
+participant Component as c
+participant Service as s
+
+
+[--> v: Sends request to delete driver
+activate v
+
+v -> c: onDeleteClick ()
+activate c
+
+c -> s: deleteDriver ()
+activate s
+
+s ->o]: deleteDriver ()
+
+s<--]: Returns result
+
+s --> c: Returns result
+deactivate s
+
+c --> v: Returns result
+deactivate c
+
+v -->[ : Displays result
+
+
+
