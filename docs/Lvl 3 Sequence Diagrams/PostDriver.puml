@@ -1,0 +1,40 @@
+@startuml Post Driver
+
+skinparam sequenceMessageAlign center
+skinparam RoundCorner 15
+title Post Driver
+
+participant View as v
+participant Component as c
+participant Service as s
+
+
+[-> v: Inicializes the process
+activate v
+
+[<-- v: Requests Driver data
+
+[-> v: Sends Driver data
+
+
+
+v -> c: onSubmit ()
+activate c
+
+c -> s: createDriver ()
+activate s
+
+s ->o]: createDriver ()
+
+s<--]: Returns result
+
+s --> c: Returns result
+deactivate s
+
+c --> v: Returns result
+deactivate c
+
+v -->[ : Displays updated driver table
+
+
+
