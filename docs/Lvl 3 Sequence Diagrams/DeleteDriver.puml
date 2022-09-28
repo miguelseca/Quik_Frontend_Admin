@@ -9,7 +9,7 @@ participant Component as c
 participant Service as s
 
 
-[--> v: Sends request to delete driver
+[-> v: Sends request to delete driver
 activate v
 
 v -> c: onDeleteClick ()
