@@ -1,3 +1,138 @@
+commit a410f3b1f119ca7db9226bc5465bbadd342e4bca	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 06:15:02 2022 +0100
+
+    SequenceDiagram - Logout
+
+A	docs/Lvl 3 Sequence Diagrams/Logout.puml
+
+commit 467178896ff654ac5bf9e07255554004b0208f27	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 06:13:43 2022 +0100
+
+    SequenceDiagram - Login
+
+A	docs/Lvl 3 Sequence Diagrams/Login.puml
+
+commit 82c71e458cfc6ef8e2bb58ec33a6d494fade7619	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 06:08:02 2022 +0100
+
+    SequenceDiagram - Updated Issue
+
+A	docs/Lvl 3 Sequence Diagrams/UpdateIssue.puml
+
+commit 75ba6f34608498751bb3abea65304e5e4b5971af	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 06:01:15 2022 +0100
+
+    finishing touches
+
+M	docs/Lvl 3 Sequence Diagrams/EditDriver.puml
+
+commit 6f1df794847c786e881f3205ba1ca606fcc21ea3	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 06:01:01 2022 +0100
+
+    SequenceDiagram - PostDriver
+
+A	docs/Lvl 3 Sequence Diagrams/PostDriver.puml
+
+commit 0d2b6ce6170a0f5b6e4f47248d6417fcfc3152cc	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:55:18 2022 +0100
+
+    SequenceDiagram - EditDriver
+
+A	docs/Lvl 3 Sequence Diagrams/EditDriver.puml
+
+commit e11844f68692694daee62e95bc4fa9626c577e7d	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:46:13 2022 +0100
+
+    SequenceDiagram - ListAllIssues
+
+A	docs/Lvl 3 Sequence Diagrams/ListIssues.puml
+
+commit 9cd817f45b50a418225be8f2c1b9bffd65cc8b6a	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:40:21 2022 +0100
+
+    SequenceDiagram - ListDrivers
+
+A	docs/Lvl 3 Sequence Diagrams/ListDrivers.puml
+
+commit 725e752acc53eb5b560baac445534c4130063648	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:36:50 2022 +0100
+
+    SequenceDiagram - BanClient
+
+A	docs/Lvl 3 Sequence Diagrams/BanClient.puml
+
+commit 5940a520a02b74a9d71cd65faf853ad20e5067d0	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:36:12 2022 +0100
+
+    lifeline adjusted
+
+M	docs/Lvl 3 Sequence Diagrams/DeleteDriver.puml
+
+commit 56796888a76985b2f51605d012ad1efe2a04aa0e	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:35:19 2022 +0100
+
+    adjustment on return message
+
+M	docs/Lvl 3 Sequence Diagrams/DeleteDriver.puml
+
+commit 103a3034da61ab866d64e55483b525e2bd2c1793	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:29:00 2022 +0100
+
+    re-adjustment
+
+M	docs/Lvl 3 Sequence Diagrams/DeleteDriver.puml
+A	docs/Lvl 3 Sequence Diagrams/ListClients.puml
+
+commit 6b0931ac7680a8c8b6defd213ac8446510ed4dd8	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:25:26 2022 +0100
+
+    removed fodder sequenceDiagrams
+
+D	docs/Lvl 3 Sequence Diagrams/BanClient.puml
+D	docs/Lvl 3 Sequence Diagrams/ListClients.puml
+D	docs/Lvl 3 Sequence Diagrams/ListDrivers.puml
+D	docs/Lvl 3 Sequence Diagrams/ListTrips.puml
+
+commit 534290359526df49adee6b8c8cb1724f01b4c7d6	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 05:24:45 2022 +0100
+
+    SequenceDiagram - DeleteDriver
+
+A	docs/Lvl 3 Sequence Diagrams/DeleteDriver.puml
+
+commit 7fee7882e38ff45b921cfc86915126fc4a37b83d	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 00:48:47 2022 +0100
+
+    wording changes
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit b409c490990495947c19a234a572e7ce61edb34c	refs/heads/main
+Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
+Date:   Wed Sep 28 00:48:20 2022 +0100
+
+    website background color altered
+
+M	src/app/components/clients/clients.component.css
+M	src/app/components/dashboard/dashboard.component.css
+M	src/app/components/drivers/drivers.component.css
+M	src/app/components/issues/issues.component.css
+
 commit ec660e285e60477f793cff71a42e7ddb2dc8eccf	refs/heads/main
 Author: Cláudio Amaral <claudiorafaelamaral@gmail.com>
 Date:   Tue Sep 20 18:45:30 2022 +0100

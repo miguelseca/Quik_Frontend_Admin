@@ -1,3 +1,28 @@
+7ade59a,2022-09-28 21:49:22 +0100,Rui Pinto,rfcapinto@gmail.com,fixed total_trips length
+380cca6,2022-09-28 21:42:07 +0100,Rui Pinto,rfcapinto@gmail.com,added pipe to transform data showed  in map
+aec019f,2022-09-28 20:49:21 +0100,Rui Pinto,rfcapinto@gmail.com,removed payment method from clients table
+839377c,2022-09-28 20:34:42 +0100,Rui Pinto,rfcapinto@gmail.com,removed tripID from issues table updated issues test file
+4497d66,2022-09-28 20:22:45 +0100,Rui Pinto,rfcapinto@gmail.com,added redirect to invalid url
+a410f3b,2022-09-28 06:15:02 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - Logout
+4671788,2022-09-28 06:13:43 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - Login
+82c71e4,2022-09-28 06:08:02 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - Updated Issue
+75ba6f3,2022-09-28 06:01:15 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,finishing touches
+6f1df79,2022-09-28 06:01:01 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - PostDriver
+0d2b6ce,2022-09-28 05:55:18 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - EditDriver
+e11844f,2022-09-28 05:46:13 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - ListAllIssues
+9cd817f,2022-09-28 05:40:21 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - ListDrivers
+725e752,2022-09-28 05:36:50 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - BanClient
+5940a52,2022-09-28 05:36:12 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,lifeline adjusted
+5679688,2022-09-28 05:35:19 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,adjustment on return message
+103a303,2022-09-28 05:29:00 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,re-adjustment
+6b0931a,2022-09-28 05:25:26 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,removed fodder sequenceDiagrams
+5342903,2022-09-28 05:24:45 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,SequenceDiagram - DeleteDriver
+7fee788,2022-09-28 00:48:47 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,wording changes
+b409c49,2022-09-28 00:48:20 +0100,Cláudio Amaral,claudiorafaelamaral@gmail.com,website background color altered
+4f23ea9,2022-09-27 23:54:05 +0100,Rui Pinto,rfcapinto@gmail.com,drivers table: sort working in nested objects - email field width increased
+99af44d,2022-09-27 23:53:09 +0100,Rui Pinto,rfcapinto@gmail.com,removed tasks
+27c0737,2022-09-27 23:52:48 +0100,Rui Pinto,rfcapinto@gmail.com,Added pipe Shift to Text
+7426748,2022-09-27 23:42:55 +0100,Paulo Proença,prp@isep.ipp.pt,Repository Analysis
 57ed0cf,2022-09-27 22:53:28 +0100,Rui Pinto,rfcapinto@gmail.com,code cleanup
 3ca53aa,2022-09-27 22:53:17 +0100,Rui Pinto,rfcapinto@gmail.com,minor fixes in issues
 8a1c89d,2022-09-27 22:53:00 +0100,Rui Pinto,rfcapinto@gmail.com,Fixed bug in banclient method

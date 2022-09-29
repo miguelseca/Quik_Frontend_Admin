@@ -1,4 +1,80 @@
-commit 57ed0cfbfba25495b95a196c056a0ee4bec24e82	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+commit 7ade59a3ad51f0212e4430e19031c264cd35d7fa	refs/heads/main (HEAD -> main, origin/main, origin/HEAD)
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 28 21:49:22 2022 +0100
+
+    fixed total_trips length
+
+M	src/app/components/dashboard/dashboard.component.ts
+
+commit 380cca6d51ccfa4cebc2391bee7ba22acb3a48f7	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 28 21:42:07 2022 +0100
+
+    added pipe to transform data showed  in map
+
+M	src/app/app.module.ts
+M	src/app/components/maps/maps.component.ts
+
+commit aec019f766e03c01e66efa5637869ca6849f1124	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 28 20:49:21 2022 +0100
+
+    removed payment method from clients table
+
+M	src/app/components/clients/clients.component.css
+M	src/app/components/clients/clients.component.ts
+
+commit 839377c0f31ca80bed040040617e89a0dfc7f3c6	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 28 20:34:42 2022 +0100
+
+    removed tripID from issues table
+    updated issues test file
+
+M	src/app/_tests/issues.component.spec.ts
+M	src/app/components/issues/issues.component.css
+M	src/app/components/issues/issues.component.ts
+
+commit 4497d66eeaa01dd7879eefed596a3e62303a503f	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Wed Sep 28 20:22:45 2022 +0100
+
+    added redirect to invalid url
+
+M	src/app/app-routing.module.ts
+
+commit 4f23ea97cab5810e6679e3875263104a9d9f5634	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 23:54:05 2022 +0100
+
+    drivers table: sort working in nested objects
+    - email field width increased
+
+M	src/app/components/drivers/drivers.component.css
+M	src/app/components/drivers/drivers.component.html
+M	src/app/components/drivers/drivers.component.ts
+
+commit 99af44d8fee18d1ed03a8ac465bc2480827e4ef6	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 23:53:09 2022 +0100
+
+    removed tasks
+
+M	src/app/components/dashboard/dashboard.component.html
+
+commit 27c0737ffa97961a35d71835d74ebb9e6a95ab8d	refs/heads/main
+Author: Rui Pinto <rfcapinto@gmail.com>
+Date:   Tue Sep 27 23:52:48 2022 +0100
+
+    Added pipe Shift to Text
+
+R067	src/app/enums/enum-service-code-to-text.spec.ts	src/app/_tests/enum-service-code-to-text.spec.ts
+A	src/app/_tests/enum-shift-to-text.pipe.spec.ts
+M	src/app/app.module.ts
+A	src/app/enums/enum-shift-to-text.pipe.ts
+M	src/app/enums/service-shifts.ts
+
+commit 57ed0cfbfba25495b95a196c056a0ee4bec24e82	refs/heads/main
 Author: Rui Pinto <rfcapinto@gmail.com>
 Date:   Tue Sep 27 22:53:28 2022 +0100
 
